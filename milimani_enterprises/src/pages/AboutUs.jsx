@@ -1,10 +1,12 @@
 import Footer from "../components/footer";
-function AboutUs() {
+function aboutUs() {
   return (
     <>
-        <Footer />
+      <h1 className="text-black-100 text-lg">About Us</h1>
+      {/* Footer */}
+      <Footer />
     </>
   );
 }   
 
-export default AboutUs;
+export default aboutUs;
