@@ -1,7 +1,7 @@
 function contactUs(){
     return (
         <>
-            <h1>Contact Us</h1>
+            <h1 className="text-3xl font-bold">Contact Us</h1>
         </>
     )
 }
