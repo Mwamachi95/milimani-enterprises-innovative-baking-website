@@ -9,10 +9,10 @@ function Footer(){
     const navigate = useNavigate();
     const location = useLocation();
 
-    return (
+    return ( 
         <>
             <div style={{ backgroundColor: '#163033' }} 
-                className="w-full fixed bottom-0 left-0 p-15 flex flex-col gap-10 text-white">
+                className="w-screen p-8 sm:p-15 flex flex-col gap-10 text-white">
                 {/* Footer content */}
                 <div className="lg:w-full flex flex-col lg:flex-row gap-10 justify-between">
                     {/* Logo */}
@@ -33,12 +33,12 @@ function Footer(){
                             {/* Number */}
                             <div className="flex gap-2">
                                 <img src="call.svg" alt="phone" />
-                                <p>+250 788 760 923</p>
+                                <p className="text1">+250 788 760 923</p>
                             </div>
                             {/* Email */}
                             <div className="flex gap-2">
                                 <img src="mail.svg" alt="email" />
-                                <p>info@milimani.rw</p>
+                                <p className="text1">info@milimani.rw</p>
                             </div>
                             {/* Social media */}
                             <div className="flex sm:justify-start justify-center gap-3">
@@ -75,12 +75,12 @@ function Footer(){
                             {/* Shop address */}
                             <div className="flex items-start gap-2">
                                 <img src="store.svg" alt="store" />
-                                <p>Kigali, Rwanda<br/>KN 1 Rd</p>
+                                <p className="text1">Kigali, Rwanda<br/>KN 1 Rd</p>
                             </div>
                             {/* Factory address */}
                             <div className="flex items-start gap-2">
                                 <img src="factory.svg" alt="factory" />
-                                <p>Kigali, Rwanda<br/>Industrial Area</p>
+                                <p className="text1">Kigali, Rwanda<br/>Industrial Area</p>
                             </div>
                         </div>
 
@@ -88,13 +88,13 @@ function Footer(){
                         <div className="flex flex-col items-center sm:items-start gap-3">
                             <p className="font-semibold text-xl">Pages</p>
                             <li onClick={() => navigate("/")} className="list-none hover-underline cursor-pointer">
-                                <a>Home</a>
+                                <a className="text1">Home</a>
                             </li>
                             <li onClick={() => navigate("/aboutUs")} className="list-none hover-underline cursor-pointer">
-                                <a>About Us</a>
+                                <a className="text1">About Us</a>
                             </li>
                             <li onClick={() => navigate("/contactUs")} className="list-none hover-underline cursor-pointer">
-                                <a>Contact Us</a>
+                                <a className="text1">Contact Us</a>
                             </li>    
                         </div>
 
@@ -105,7 +105,7 @@ function Footer(){
                 <hr className="footerDivider" />
 
                 {/* Copyright */}
-                <p className="font-regular text-sm text-white text-center lg:text-left lg:w-full">
+                <p className="text1 text-white text-center lg:text-left lg:w-full">
                     &copy; {year} Milimani Enterprises. All rights reserved.
                 </p>
             

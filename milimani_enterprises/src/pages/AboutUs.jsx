@@ -1,8 +1,12 @@
 import Footer from "../components/Footer/footer";
+import OurValues from "../components/OurValues/ourValues";
 function aboutUs() {
   return (
     <>
-      <h1 className="text-black-100 text-lg">About Us</h1>
+      
+      {/* Our Values Section */}
+      <OurValues />
+
       {/* Footer */}
       <Footer />
     </>

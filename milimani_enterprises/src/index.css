@@ -18,7 +18,32 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+}
+
+.heading1{
+  @apply text-6xl	font-bold
+}
+
+.heading2{
+  @apply text-4xl font-bold;
+}
+
+.heading3 {
+  @apply text-2xl font-semibold;
+}
+
+.heading4 {
+  @apply text-xl font-semibold;
+}
+
+.heading5 {
+  @apply text-lg font-semibold;
+}
+
+.test1 {
+  @apply text-base font-normal;
+}
+
+.text2 {
+  @apply text-sm font-normal;
 }
