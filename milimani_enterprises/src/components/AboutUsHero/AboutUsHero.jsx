@@ -10,10 +10,13 @@ function AboutUsHero(){
                     <h1 className="text-6xl md:text-7xl font-extrabold tracking-wider max-w-160">Where We Bake Innovatively</h1>
                     <p className="text-sm md:text1 max-w-155">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
                     {/* Learn more button */}
-                    <div className="p-3 rounded-sm flex gap-2 cursor-pointer bg-[#67a650] hover:bg-[#5b9b4e] transition duration-300">
-                        <p className="text-white">Learn more</p>
-                        <img src="arrowRight.svg" alt="Arrow right"></img>
-                    </div>
+                    <a href="#our-values">
+                        <div className="p-3 rounded-sm flex items-center gap-2 cursor-pointer bg-[#67a650] hover:bg-[#5b9b4e] transition duration-300">
+                            <p className="text-white">Learn more</p>
+                            <img src="arrowRight.svg" alt="Arrow right"></img>    
+                        </div>
+                    </a>
+                    
                 </div>
 
                 {/* Image Section */}
@@ -26,4 +29,4 @@ function AboutUsHero(){
     );
 }
 
-export default AboutUsHero;s
+export default AboutUsHero;

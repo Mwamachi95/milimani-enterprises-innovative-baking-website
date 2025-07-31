@@ -60,6 +60,6 @@ test('renders page links', () => {
     expect(screen.getByText('Contact Us')).toBeInTheDocument();
 });
 
-// Test for navigation links
+// TO DO: Test for navigation links
 
-// Test social media links
+// TO DO: Test social media links

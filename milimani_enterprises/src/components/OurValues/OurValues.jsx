@@ -1,7 +1,7 @@
 function OurValues (){
     return (
         <>
-            <div className="min-w-50 p-8 sm:p-15 bg-[#292725]">
+            <div className="min-w-50 p-8 sm:p-15 bg-[#292725]" id="our-values">
                 
                 <div className="max-w-7xl mx-auto">
 

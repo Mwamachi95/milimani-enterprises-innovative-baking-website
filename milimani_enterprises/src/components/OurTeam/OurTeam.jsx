@@ -137,5 +137,3 @@ function OurTeam (){
     );
 }
 export default OurTeam;
-
-// TO DO: Create unit test for this component
