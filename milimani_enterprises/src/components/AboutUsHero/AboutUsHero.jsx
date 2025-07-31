@@ -26,6 +26,4 @@ function AboutUsHero(){
     );
 }
 
-export default AboutUsHero;
-
-// TO DO: Create unit testing for this component
+export default AboutUsHero;s
