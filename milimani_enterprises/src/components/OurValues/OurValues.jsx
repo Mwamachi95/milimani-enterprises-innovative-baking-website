@@ -5,7 +5,7 @@ function OurValues (){
                 
                 <div className="max-w-7xl mx-auto">
 
-                    <div className="w-full flex flex-col gap-20">
+                    <div className="w-full flex flex-col gap-20 overflow-x-auto">
 
                         {/* Heading */}
                         <h1 className="heading1">Our Values</h1>

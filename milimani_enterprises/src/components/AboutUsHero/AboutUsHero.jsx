@@ -1,11 +1,12 @@
 function AboutUsHero(){
     return(
         <>
-        <div className="md:pl-15 md:pr-0 md:pt-15 md:pb-15 pl-8 pr-8 pt-40 pb-40 ">
-            <div className="sm:w-screen flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
+        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 pl-8 pr-8 pt-40 pb-40">
+
+            <div className="xl:w-screen sm:w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
 
                 {/* Text Section */}
-                <div className="flex flex-col gap-4 items-start text-[#143e45] ">
+                <div className="flex flex-col gap-4 items-start text-[#143e45]">
                     <h1 className="text-6xl md:text-7xl font-extrabold tracking-wider max-w-160">Where We Bake Innovatively</h1>
                     <p className="text-sm md:text1 max-w-155">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
                     {/* Learn more button */}
@@ -16,12 +17,15 @@ function AboutUsHero(){
                 </div>
 
                 {/* Image Section */}
-                <img src="baker.svg" alt="Baker illustration" className="hidden md:block"/>
+                <img src="baker.svg" alt="Baker illustration" className="hidden lg:block"/>
                 
-            </div>          
+            </div>
+
         </div>
         </>
     );
 }
 
 export default AboutUsHero;
+
+// TO DO: Create unit testing for this component
