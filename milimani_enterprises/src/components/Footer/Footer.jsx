@@ -12,7 +12,7 @@ function Footer(){
     return ( 
         <>
             <div style={{ backgroundColor: '#163033' }} 
-                className="w-screen p-8 sm:p-15 flex flex-col gap-10 text-white">
+                className="min-w-50 w-screen p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
                 {/* Footer content */}
                 <div className="lg:w-full flex flex-col lg:flex-row gap-10 justify-between">
                     {/* Logo */}

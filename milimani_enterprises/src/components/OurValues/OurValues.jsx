@@ -1,7 +1,7 @@
 function OurValues (){
     return (
         <>
-            <div style={{ backgroundColor: '#292725' }} className="w-screen p-8 sm:p-15 flex flex-col gap-20">
+            <div style={{ backgroundColor: '#292725' }} className="min-w-50 w-screen p-8 sm:p-15 flex flex-col gap-20 overflow-x-auto">
                 {/* Heading */}
                 <h1 className="heading1">Our Values</h1>
 
@@ -11,7 +11,7 @@ function OurValues (){
                     <div className="flex flex-col gap-3">
                         <div className="flex items-center justify-between gap-3">
                             <p className="text-2xl font-semibold">Quality First</p>
-                            <img src="arrowDown.svg" alt="arrow" className="hidden sm:flex w-10 cursor-pointer"/>
+                            <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
                         </div>
                         <div className="">
                                 <p className="text1">We never compromise on the standard of the product, every product we is test for consistency, performance and freshness</p>
@@ -25,7 +25,7 @@ function OurValues (){
                     <div className="flex flex-col gap-3">
                         <div className="flex items-center justify-between gap-3">
                             <p className="text-2xl font-semibold">Customer Success</p>
-                            <img src="arrowDown.svg" alt="arrow" className="hidden sm:flex w-10 cursor-pointer"/>
+                            <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
                         </div>
                         <div className="">
                             <p className="text1">We are committed to ensuring our customers achieve their desired outcomes with our products.</p>
@@ -39,7 +39,7 @@ function OurValues (){
                     <div className="flex flex-col gap-3">
                         <div className="flex items-center justify-between gap-3">
                             <p className="text-2xl font-semibold">Innovation Everyday</p>
-                            <img src="arrowDown.svg" alt="arrow" className="hidden sm:flex w-10 cursor-pointer"/>
+                            <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
                         </div>
                         <div className="">
                                 <p className="text1">We foster a culture of continuous improvement and encourage our team to think outside the box.</p>
@@ -53,7 +53,7 @@ function OurValues (){
                     <div className="flex flex-col gap-3">
                         <div className="flex items-center justify-between gap-3">
                             <p className="text-2xl font-semibold">Integrity Always</p>
-                            <img src="arrowDown.svg" alt="arrow" className="hidden sm:flex w-10 cursor-pointer"/>
+                            <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
                         </div>
                         <div className="">
                             <p className="text1">We uphold the highest standards of integrity in all our actions.</p>
