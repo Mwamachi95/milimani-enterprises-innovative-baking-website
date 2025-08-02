@@ -1,5 +1,5 @@
 // App.jsx (temporary for Navigation testing)
-import Navigation from './components/layout/Navigation';
+import Navigation from './components/Navigation/Navigation';
 // import TailwindTest from './components/TailwindTest';
 
 
