@@ -12,8 +12,6 @@
   --font-family-sora: 'Sora', sans-serif;
 }
 
-body {
-  font-family: 'Sora', system-ui, -apple-system, sans-serif;
 :root {
   font-family: "Sora", sans-serif;
   line-height: 1.5;
@@ -27,11 +25,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth
-
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
   margin: 0;
   display: flex;
 }
@@ -56,7 +54,7 @@ body {
   @apply text-lg font-semibold;
 }
 
-.test1 {
+.text1 {
   @apply text-base font-normal;
 }
 
