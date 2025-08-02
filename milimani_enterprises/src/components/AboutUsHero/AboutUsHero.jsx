@@ -3,7 +3,7 @@ function AboutUsHero(){
         <>
         <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 pl-8 pr-8 pt-40 pb-40">
 
-            <div className="xl:w-screen sm:w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
+            <div className="sm:w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
 
                 {/* Text Section */}
                 <div className="flex flex-col gap-4 items-start text-[#143e45]">

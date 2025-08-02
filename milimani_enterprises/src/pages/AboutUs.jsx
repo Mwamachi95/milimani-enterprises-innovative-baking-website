@@ -6,7 +6,7 @@ function aboutUs() {
   return (
     <>
       {/* About Us Hero Section */}
-      <AboutUsHero />
+      {/* <AboutUsHero /> */}
       
       {/* Our Values Section */}
       <OurValues />

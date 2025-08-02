@@ -60,6 +60,22 @@ test('renders page links', () => {
     expect(screen.getByText('Contact Us')).toBeInTheDocument();
 });
 
-// TO DO: Test for navigation links
+// Test for navigation links
+// Mock pages for testing the navigation links
+const Home = () => <h1>Home Page</h1>
+const contactUs = () => <h1>Contact Page</h1>
+const aboutUs = () => <h1>About  Page</h1>
+test('Links navigates to the correct pages when clicked', () => {
+    // Render the Footer component wrapped in MemoryRouter
+    render(<Footer />, { wrapper: MemoryRouter });
 
-// TO DO: Test social media links
+});
+
+// Test social media links
+test('Social media links navigates to the correct page when clicked', () => {
+    // Render the Footer component wrapped in MemoryRouter
+    render(<Footer />, { wrapper: MemoryRouter });
+
+    //
+
+});

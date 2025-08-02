@@ -12,7 +12,7 @@ function Footer(){
     return ( 
         <>
             <div style={{ backgroundColor: '#163033' }} 
-                className="min-w-50 w-full p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
+                className="min-w-50 w-full sm:w-screen p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
                     <div className="w-full flex justify-center">
                         <div className="w-full max-w-7xl flex flex-col gap-10">
 
@@ -90,13 +90,13 @@ function Footer(){
                                     {/* Pages */}
                                     <div className="flex flex-col items-center sm:items-start gap-3">
                                         <p className="font-semibold text-xl">Pages</p>
-                                        <li onClick={() => navigate("/")} className="list-none hover-underline cursor-pointer">
+                                        <li onClick={() => navigate("/")} className="list-none cursor-pointer hover:scale-105 transition-transform duration-200 ">
                                             <a className="text1">Home</a>
                                         </li>
-                                        <li onClick={() => navigate("/aboutUs")} className="list-none hover-underline cursor-pointer">
+                                        <li onClick={() => navigate("/aboutUs")} className="list-none cursor-pointer hover:scale-105 transition-transform duration-200 ">
                                             <a className="text1">About Us</a>
                                         </li>
-                                        <li onClick={() => navigate("/contactUs")} className="list-none hover-underline cursor-pointer">
+                                        <li onClick={() => navigate("/contactUs")} className="list-none cursor-pointer hover:scale-105 transition-transform duration-200 ">
                                             <a className="text1">Contact Us</a>
                                         </li>    
                                     </div>
@@ -121,3 +121,6 @@ function Footer(){
     );
 }
 export default Footer;
+
+// Change color of the social media icons on hover wet to sand sand
+// Underline on the page links

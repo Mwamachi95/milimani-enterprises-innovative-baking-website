@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import OurValues from './ourValues';
+import OurValues from './OurValues';
 
 test('renders all the content in the OurValues component', () => {
     // Render the OurValues component
