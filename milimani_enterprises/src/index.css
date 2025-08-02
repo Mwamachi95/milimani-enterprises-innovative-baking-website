@@ -14,4 +14,52 @@
 
 body {
   font-family: 'Sora', system-ui, -apple-system, sans-serif;
+:root {
+  font-family: "Sora", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth
+
+}
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+.heading1{
+  @apply text-6xl	font-bold
+}
+
+.heading2{
+  @apply text-4xl font-bold;
+}
+
+.heading3 {
+  @apply text-2xl font-semibold;
+}
+
+.heading4 {
+  @apply text-xl font-semibold;
+}
+
+.heading5 {
+  @apply text-lg font-semibold;
+}
+
+.test1 {
+  @apply text-base font-normal;
+}
+
+.text2 {
+  @apply text-sm font-normal;
 }
