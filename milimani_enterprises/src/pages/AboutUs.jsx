@@ -1,9 +1,9 @@
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/footer";
-import OurValues from "../components/OurValues/ourValues";
+import Footer from "../components/Footer/Footer";
+import OurValues from "../components/OurValues/OurValues";
 import OurTeam from "../components/OurTeam/OurTeam";
 import AboutUsHero from "../components/AboutUsHero/AboutUsHero";
-function aboutUs() {
+function AboutUs() {
   return (
     <>
       {/* Navigation */}
@@ -24,4 +24,4 @@ function aboutUs() {
   );
 }   
 
-export default aboutUs;
+export default AboutUs;

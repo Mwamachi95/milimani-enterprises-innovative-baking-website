@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 @theme {
   --color-luscious-lime: #7CBF00;
@@ -9,36 +9,23 @@
   --color-bokara-grey: #2A2725;
   --color-dark-hunter-green: #153033;
   
-  --font-family-sora: 'Sora', sans-serif;
+  --font-family-sora: Sora, sans-serif;
 }
 
 :root {
   font-family: "Sora", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Sora', system-ui, -apple-system, sans-serif;
   margin: 0;
-  display: flex;
 }
 
-.heading1{
-  @apply text-6xl	font-bold
+.heading1 {
+  @apply text-6xl font-bold;
 }
 
-.heading2{
+.heading2 {
   @apply text-4xl font-bold;
 }
 

@@ -75,7 +75,7 @@ const Navigation = () => {
           
           {/* Company Link */}
           <a 
-            href="/about"
+            href="/aboutUs"
             className="relative group bg-dark-hunter-green text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center overflow-hidden transition-all duration-300"
           >
             <span className="relative z-10">
@@ -86,7 +86,7 @@ const Navigation = () => {
 
           {/* Let's Talk Button */}
           <a 
-            href="/contact"
+            href="/contactUs"
             className="relative group bg-wet-sand text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center gap-6 overflow-hidden transition-all duration-300"
           >
             {/* Background Animation */}
