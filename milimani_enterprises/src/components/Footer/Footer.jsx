@@ -19,19 +19,19 @@ function Footer(){
                             {/* Footer content */}
                             <div className="lg:w-full flex flex-col lg:flex-row gap-10 justify-between">
                                 {/* Logo */}
-                                <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                                <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-start sm:justify-center">
                                     <img className="w-30 sm:w-43" src="logo.svg" alt="logo" />
                                     <div className="">
-                                        <h1 className="font-bold text-4xl sm:text-5xl sm:text-left text-center">Milimani<br/>Enterprises</h1>
-                                        <p className="font-regular text-lg text-white sm:text-left text-center">Innovative Baking</p>    
+                                        <h1 className="font-bold text-4xl sm:text-5xl text-left">Milimani<br/>Enterprises</h1>
+                                        <p className="font-regular text-lg text-white text-left">Innovative Baking</p>    
                                     </div>
                                 </div>
                                 
                                 {/* Company information */}
-                                <div className="flex sm:flex-row flex-col sm:gap-15 gap-10 justify-center items-top text-center sm:text-left">
+                                <div className="flex sm:flex-row flex-col sm:gap-15 gap-10 justify-start sm:justify-center items-top text-left">
 
                                     {/* Contact us */}
-                                    <div className="flex flex-col items-center sm:items-start gap-3">
+                                    <div className="flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Contact</p>
                                         {/* Number */}
                                         <div className="flex gap-2">
@@ -44,7 +44,7 @@ function Footer(){
                                             <p className="text1">info@milimani.rw</p>
                                         </div>
                                         {/* Social media */}
-                                        <div className="flex sm:justify-start justify-center gap-3">
+                                        <div className="flex justify-start gap-3">
                                             <a
                                                 href="https://www.facebook.com/milimani.biz/"
                                                 target="_blank"
@@ -71,7 +71,7 @@ function Footer(){
                                     </div>
 
                                     {/* Address us */}
-                                    <div className="flex flex-col items-center sm:items-start gap-3">
+                                    <div className="flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Address</p>
                                         {/* Shop address */}
                                         <div className="flex items-start gap-2">
@@ -86,7 +86,7 @@ function Footer(){
                                     </div>
 
                                     {/* Pages */}
-                                    <div className="flex flex-col items-center sm:items-start gap-3">
+                                    <div className="flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Pages</p>
                                         <li onClick={() => navigate("/")} className="list-none cursor-pointer hover:scale-105 transition-transform duration-200 ">
                                             <a className="text1">Home</a>
