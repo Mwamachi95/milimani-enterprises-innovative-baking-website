@@ -1,12 +1,12 @@
 function OurTeam (){
     return (
         <>
-            <div className="min-w-50 w-full sm:w-screen p-8 sm:p-15 flex flex-col gap-20 overflow-x-auto">
+            <div className="min-w-50 w-full lg:w-screen p-8 sm:p-15 flex flex-col gap-20 overflow-x-auto">
                 {/* Title */}
                 <div className="flex flex-col gap-4 sm:items-center">
                     <h1 className="text-4xl font-semibold text-black sm:text-center text-left">We are the people who make up</h1>
                     <h1 className="text-4xl font-semibold text-left sm:text-center text-left"> 
-                        <span className="text-center font-bold text-white pl-2 pr-2" style={{backgroundColor: '#7cbf00'}}>
+                        <span className="text-center font-bold text-white pl-2 pr-2" style={{backgroundColor: '#66BF3C'}}>
                            Milimani Enterprises
                         </span>
                     </h1>

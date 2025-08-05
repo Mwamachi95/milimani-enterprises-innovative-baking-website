@@ -1,31 +1,30 @@
 function AboutUsHero(){
     return(
-        <>
-        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 pl-8 pr-8 pt-40 pb-40">
+        <div className="flex justify-center p-8 sm:p-15">
+            <div className="w-full max-w-7xl">
+                <div className="w-full flex justify-between gap-10 overscroll-x-none">
+                    <div className="flex flex-col justify-between w-min gap-20">
+                        <p className="text-[#66BF3C] font-medium sm:font-regular tracking-wide text-[45px] sm:text-7xl md:text-5xl lg:text-6xl xl:text-7xl w-fit">Baking<br/>Innovatively</p>
 
-            <div className="sm:w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
-
-                {/* Text Section */}
-                <div className="flex flex-col gap-4 items-start text-[#143e45]">
-                    <h1 className="text-6xl md:text-7xl font-extrabold tracking-wider max-w-160">Where We Bake Innovatively</h1>
-                    <p className="text-sm md:text1 max-w-155">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
-                    {/* Learn more button */}
-                    <a href="#our-values">
-                        <div className="p-3 rounded-sm flex items-center gap-2 cursor-pointer bg-[#67a650] hover:bg-[#5b9b4e] transition duration-300">
-                            <p className="text-white">Learn more</p>
-                            <img src="arrowRight.svg" alt="Arrow right"></img>    
+                        <div className="flex flex-col items-start gap-6">
+                            <p className="text-[#143E45] text-sm lg:text-lg">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
+                            <a href="#our-values">
+                                <button className="cursor-pointer pr-[25px] pl-[25px] pt-[15px] pb-[15px] sm:pl-[50px] sm:pr-[50px] sm:pt-[20px] sm:pb-[20px] bg-[#66BF3C] rounded-[10px] duration-200 hover:bg-white border-[#66BF3C] border-[2px] hover:text-[#66BF3C]">Learn more</button>      
+                            </a>
+                              
                         </div>
-                    </a>
-                    
-                </div>
+                        
+                    </div>
 
-                {/* Image Section */}
-                <img src="baker.svg" alt="Baker illustration" className="hidden lg:block"/>
-                
+                    <div className="w-80 h-100 lg:w-100 xl:w-150 xl:h-150 rounded-lg bg-[#66BF3C] hidden md:block">
+                        <img src="aboutUsHero.jpg" alt="Man Baking" className="w-full h-full object-cover object-center rounded-lg" />
+                    </div>      
+                </div>
             </div>
 
+            
+            
         </div>
-        </>
     );
 }
 

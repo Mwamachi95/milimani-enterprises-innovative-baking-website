@@ -12,7 +12,7 @@ function Footer(){
     return ( 
         <>
             <div style={{ backgroundColor: '#163033' }} 
-                className="min-w-50 w-full sm:w-screen p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
+                className="min-w-50 w-full lg:w-screen p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
                     <div className="w-full flex justify-center">
                         <div className="w-full max-w-7xl flex flex-col gap-10">
 
