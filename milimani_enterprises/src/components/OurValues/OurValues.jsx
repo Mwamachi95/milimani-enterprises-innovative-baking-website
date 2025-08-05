@@ -1,84 +1,119 @@
-import React from 'react';
+import { useState } from 'react';
 
-function OurValues (){
-    // Create a function for showing and hiding the drop down content.
+const OurValues = () => {
+  const [activeAccordion, setActiveAccordion] = useState(null);
 
-    return (
-        <>
-            <div className="w-full sm:w-screen min-w-50 p-8 sm:p-15 bg-[#292725]" id="our-values">
-                
-                <div className="max-w-7xl mx-auto">
+  const values = [
+    {
+      id: 1,
+      title: "QUALITY FIRST",
+      content: "We never compromise on the standard of the product. Every product we deliver is tested for consistency, performance and freshness. Our commitment to quality is unwavering and forms the foundation of everything we do."
+    },
+    {
+      id: 2,
+      title: "CUSTOMER SUCCESS",
+      content: "We are committed to ensuring our customers achieve their desired outcomes with our products. Your success is our success, and we work tirelessly to provide solutions that drive your business forward."
+    },
+    {
+      id: 3,
+      title: "INNOVATION EVERYDAY",
+      content: "We foster a culture of continuous improvement and encourage our team to think outside the box. Innovation drives our product development, service delivery, and approach to solving industry challenges."
+    },
+    {
+      id: 4,
+      title: "INTEGRITY ALWAYS",
+      content: "We uphold the highest standards of integrity in all our actions. Transparency, honesty, and ethical business practices guide every decision we make and every relationship we build."
+    }
+  ];
 
-                    <div className="w-full flex flex-col gap-20 overflow-x-auto">
+  const handleMouseEnter = (valueId) => {
+    setActiveAccordion(valueId);
+  };
 
-                        {/* Heading */}
-                        <h1 className="heading1">Our Values</h1>
+  const handleMouseLeave = () => {
+    setActiveAccordion(null);
+  };
 
-                        {/* Values dropdown */}
-                        <div className="max-w-7xl">
-                            {/* Quality */}
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <p className="text-2xl font-semibold">Quality First</p>
-                                    <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
-                                </div>
-                                <div className="">
-                                        <p className="text1">We never compromise on the standard of the product, every product we is test for consistency, performance and freshness</p>
-                                </div>
-                            </div>
+  return (
+    <section className="bg-wet-sand min-h-screen px-8 md:px-12 lg:px-16">
+      {/* Header - Fixed at top */}
+      <div className="pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-12">
+        {/* Subtitle */}
+        <p className="text-sm md:text-base uppercase tracking-wider text-dark-hunter-green mb-4">
+          OUR VALUES
+        </p>
+        
+        {/* Main Heading */}
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-sora text-dark-hunter-green leading-tight">
+          The principles that guide our commitment to excellence.
+        </h2>
+      </div>
 
-                            {/* Separator */}
-                            <hr className="border-white-900 my-5"/>
-
-                            {/* Customer success */}
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <p className="text-2xl font-semibold">Customer Success</p>
-                                    <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
-                                </div>
-                                <div className="">
-                                    <p className="text1">We are committed to ensuring our customers achieve their desired outcomes with our products.</p>
-                                </div>
-                            </div>
-
-                            {/* Separator */}
-                            <hr className="border-white-900 my-5"/>
-
-                            {/* Quality */}
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <p className="text-2xl font-semibold">Innovation Everyday</p>
-                                    <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
-                                </div>
-                                <div className="">
-                                        <p className="text1">We foster a culture of continuous improvement and encourage our team to think outside the box.</p>
-                                </div>
-                            </div>
-
-                            {/* Separator */}
-                            <hr className="border-white-900 my-5"/>
-
-                            {/* Quality */}
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center justify-between gap-3">
-                                    <p className="text-2xl font-semibold">Integrity Always</p>
-                                    <img src="arrowDown.svg" alt="arrow" className="flex w-10 cursor-pointer"/>
-                                </div>
-                                <div className="">
-                                    <p className="text1">We uphold the highest standards of integrity in all our actions.</p>
-                                </div>
-                            </div>
-
-                        </div>     
-                    </div>
-                       
-                </div>
-                
+      {/* Accordion sections */}
+      <div className="pb-16 md:pb-20 lg:pb-24">
+        {values.map((value, index) => (
+          <div
+            key={value.id}
+            className={`border-b border-dark-hunter-green border-opacity-20 ${
+              index === values.length - 1 ? 'border-b-0' : ''
+            } transition-all duration-700 ease-out`}
+            onMouseEnter={() => handleMouseEnter(value.id)}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Value Title */}
+            <div
+              className="w-full flex items-center justify-between py-6 md:py-8 transition-colors duration-300 cursor-pointer"
+              aria-expanded={activeAccordion === value.id}
+              aria-controls={`value-content-${value.id}`}
+            >
+              <span className="text-left text-lg md:text-xl lg:text-2xl font-sora font-semibold text-dark-hunter-green">
+                {value.title}
+              </span>
+              
+              {/* Dropdown Arrow */}
+              <div
+                className={`transform transition-transform duration-300 ${
+                  activeAccordion === value.id ? 'rotate-180' : ''
+                }`}
+              >
+                <svg
+                  className="w-6 h-6 md:w-8 md:h-8 text-dark-hunter-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
             </div>
-        </>
-    );
-}
-export default OurValues;
 
-// TO DO: Add a dropdown functionality to the values section so that when the user clicks the button, the description is shown or hidden.
-// TO DO: When the user clicks the button, the arrow icon should rotate to indicate the dropdown state.
+            {/* Expandable Content */}
+            <div
+              className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+                activeAccordion === value.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+              id={`value-content-${value.id}`}
+              style={{
+                transition: 'max-height 1000ms cubic-bezier(0.4, 0, 0.2, 1), opacity 800ms ease-in-out'
+              }}
+            >
+              <div className="pb-6 md:pb-8 pr-12">
+                <p className="text-dark-hunter-green font-sora text-base md:text-lg leading-relaxed max-w-4xl">
+                  {value.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default OurValues;

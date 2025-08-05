@@ -72,22 +72,22 @@ const SelectedProducts = () => {
             key={product.id}
             className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col"
           >
-            {/* Sliding Background */}
-            <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
+            {/* Product Image */}
+            <div className="aspect-[3/4] overflow-hidden relative z-20">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
             
-            {/* Card Content */}
-            <div className="relative z-20 flex flex-col h-full">
-              {/* Product Image */}
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-500"
-                />
-              </div>
+            {/* Product Info Section with Sliding Background */}
+            <div className="relative flex-1">
+              {/* Sliding Background - only covers text area */}
+              <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
               
-              {/* Product Info */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              {/* Product Info Content */}
+              <div className="relative z-20 p-6 flex flex-col justify-between h-full">
                 {/* Product Name */}
                 <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
                   {product.name}

@@ -1,10 +1,15 @@
 import Navigation from "../components/Navigation/Navigation";
+import Contact from "../components/Contact/Contact";
+import ContactLocation from "../components/ContactLocation/ContactLocation";
+import Footer from "../components/Footer/Footer";
 
 function ContactUs(){
     return (
         <>
             <Navigation />
-            <h1 className="text-3xl font-bold">Contact Us</h1>
+            <Contact />
+            <ContactLocation />
+            <Footer />
         </>
     )
 }
