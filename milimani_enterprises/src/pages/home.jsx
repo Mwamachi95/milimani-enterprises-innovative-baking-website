@@ -1,10 +1,11 @@
 import Navigation from "../components/Navigation/Navigation";
+import LandingHome from "../components/LandingHome/LandingHome";
 
 function Home(){
     return (
         <>
             <Navigation />
-            <h1 className="text-black-100">Home</h1>
+            <LandingHome />
         </>
     )
 }
