@@ -92,7 +92,7 @@ const Navigation = () => {
     } : {}}>
       <div className={`flex justify-between items-center px-8 md:px-6 lg:px-8 transition-all duration-1000 ${
         isScrolled 
-          ? 'py-4' 
+          ? 'py-4 pt-6' 
           : 'pt-8 pb-4 md:pt-12 md:pb-4 lg:pt-8 lg:pb-4'
       }`}>
         
@@ -102,10 +102,10 @@ const Navigation = () => {
           className="flex items-center gap-2 md:gap-3 lg:gap-4 cursor-pointer group"
         >
           {/* Logo Icon */}
-          <div className={`w-11 h-11 md:w-[50px] md:h-[50px] lg:w-[70px] lg:h-[70px] transition-all duration-300 relative z-50 ${
+          <div className={`transition-all duration-300 relative z-50 ${
             isScrolled 
-              ? 'bg-bokara-grey rounded-xl p-[7px] md:p-[7px] lg:p-[10px]' 
-              : 'md:bg-transparent'
+              ? 'w-11 h-11 bg-bokara-grey rounded-xl p-[7px] md:w-[50px] md:h-[50px] lg:w-[70px] lg:h-[70px] md:p-[7px] lg:p-[10px]' 
+              : 'w-11 h-11 md:w-[50px] md:h-[50px] lg:w-[70px] lg:h-[70px] md:bg-transparent'
           }`}>
             <img 
               src={logoIcon} 
