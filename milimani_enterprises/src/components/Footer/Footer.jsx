@@ -46,7 +46,7 @@ function Footer(){
                                         {/* Social media */}
                                         <div className="flex sm:justify-start justify-center gap-3">
                                             <a
-                                                href="https://www.instagram.com/milimani.enterprises/?hl=en"
+                                                href="https://www.facebook.com/milimani.biz/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
@@ -58,7 +58,7 @@ function Footer(){
                                             </a>
                                             
                                             <a
-                                                href="https://www.facebook.com/milimani.biz/"
+                                                href="https://www.instagram.com/milimani.enterprises/?hl=en"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >

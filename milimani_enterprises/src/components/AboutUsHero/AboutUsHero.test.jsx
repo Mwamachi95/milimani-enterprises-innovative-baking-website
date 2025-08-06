@@ -2,6 +2,15 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import AboutUsHero from './AboutUsHero';
 
+beforeAll(() => {
+  global.IntersectionObserver = class {
+    constructor(callback) {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+});
+
 test('renders About Us Hero texts',() => {
     // Render the AboutUsHero component
     render(<AboutUsHero />);

@@ -2,6 +2,15 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import OurValues from './OurValues';
 
+beforeAll(() => {
+  global.IntersectionObserver = class {
+    constructor(callback) {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+});
+
 test('renders all the content in the OurValues component', () => {
     // Render the OurValues component
     render(<OurValues />)

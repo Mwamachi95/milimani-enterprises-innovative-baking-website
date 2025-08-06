@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 import Footer from './footer';
@@ -31,9 +31,6 @@ test('renders company information', () => {
 test('renders all icons', () => {
     // Render the Footer component wrapped in MemoryRouter
     render(<Footer />, { wrapper: MemoryRouter });
-    // Check if the social media icons are present 
-    expect(screen.getByAltText('facebook')).toBeInTheDocument();
-    expect(screen.getByAltText('instagram')).toBeInTheDocument();
     // Check if all the information icons are present
     expect(screen.getByAltText('phone')).toBeInTheDocument();
     expect(screen.getByAltText('email')).toBeInTheDocument();
@@ -60,22 +57,24 @@ test('renders page links', () => {
     expect(screen.getByText('Contact Us')).toBeInTheDocument();
 });
 
-// Test for navigation links
-// Mock pages for testing the navigation links
-const Home = () => <h1>Home Page</h1>
-const contactUs = () => <h1>Contact Page</h1>
-const aboutUs = () => <h1>About  Page</h1>
-test('Links navigates to the correct pages when clicked', () => {
-    // Render the Footer component wrapped in MemoryRouter
-    render(<Footer />, { wrapper: MemoryRouter });
-
-});
-
 // Test social media links
 test('Social media links navigates to the correct page when clicked', () => {
     // Render the Footer component wrapped in MemoryRouter
     render(<Footer />, { wrapper: MemoryRouter });
-
-    //
-
+    // Check if instagram link works
+    const instagramLink = screen.getByRole('link', { name: /instagram/i });
+    expect(instagramLink).toHaveAttribute('href', 'https://www.instagram.com/milimani.enterprises/?hl=en');
+    expect(instagramLink).toHaveAttribute('target', '_blank');
+    expect(instagramLink).toHaveAttribute('rel', 'noopener noreferrer');
+    // Check if instagram icon is present
+    expect(screen.getByAltText('instagram')).toBeInTheDocument();
+    // Check if facebook link works
+    const facebookink = screen.getByRole('link', { name: /facebook/i });
+    expect(facebookink).toHaveAttribute('href', 'https://www.facebook.com/milimani.biz/');
+    expect(facebookink).toHaveAttribute('target', '_blank');
+    expect(facebookink).toHaveAttribute('rel', 'noopener noreferrer');
+    // Check if facebook icon is present
+    expect(screen.getByAltText('facebook')).toBeInTheDocument();
 });
+
+// Test navigation links
