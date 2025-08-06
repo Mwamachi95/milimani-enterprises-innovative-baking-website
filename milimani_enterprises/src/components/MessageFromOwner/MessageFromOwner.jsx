@@ -3,7 +3,7 @@ import ownerImage from '../../assets/images/home/owner/Message_from_owner.jpg';
 const MessageFromOwner = () => {
   return (
     <section className="bg-whisper-white px-8 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[1fr_1.5fr] xl:grid-cols-[1fr_1.8fr] gap-8 md:gap-16 lg:gap-20 xl:gap-24 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.6fr_1fr] xl:grid-cols-[1.8fr_1fr] gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           
           {/* Text Content Section */}
           <div className="max-w-2xl md:max-w-none">
@@ -36,6 +36,8 @@ const MessageFromOwner = () => {
                 alt="Patricia Torotich, Founder & CEO of Milimani Enterprises"
                 className="w-full h-full object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
                 style={{ imageRendering: 'auto', backfaceVisibility: 'hidden' }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

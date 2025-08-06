@@ -35,7 +35,7 @@ const OurValues = () => {
   };
 
   return (
-    <section className="bg-wet-sand min-h-screen px-8 md:px-12 lg:px-16">
+    <section className="bg-wet-sand min-h-screen px-8 md:px-12 lg:px-16" id="our-values">
       {/* Header - Fixed at top */}
       <div className="pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-12">
         {/* Subtitle */}

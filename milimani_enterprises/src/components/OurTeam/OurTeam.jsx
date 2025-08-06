@@ -21,7 +21,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="owner.jpg" alt="Founder/CEO" className="w-full h-full object-cover object-[center_40%] xl:object-[center_45%]" />
+                                    <img src="owner.jpg" alt="Founder/CEO" className="w-full h-full object-cover object-[center_40%] xl:object-[center_45%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -41,7 +41,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="md.jpg" alt="Managing director" className="w-full h-full object-cover object-[center_45%] xl:object-[center_45%]" />
+                                    <img src="md.jpg" alt="Managing director" className="w-full h-full object-cover object-[center_45%] xl:object-[center_45%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -61,7 +61,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="operations.jpg" alt="Head of operations" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_65%]" />
+                                    <img src="operations.jpg" alt="Head of operations" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_65%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -81,7 +81,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="marketing.jpg" alt="Head of marketing" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_70%]" />
+                                    <img src="marketing.jpg" alt="Head of marketing" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_70%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -101,7 +101,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="finance.jpg" alt="Head of finance" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_70%]" />
+                                    <img src="finance.jpg" alt="Head of finance" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_70%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -121,7 +121,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="production.jpg" alt="Head of production" className="w-full h-full object-cover object-[center_60%] sm:object-[center_70%] xl:object-[center_65%]" />
+                                    <img src="production.jpg" alt="Head of production" className="w-full h-full object-cover object-[center_60%] sm:object-[center_70%] xl:object-[center_65%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -141,7 +141,7 @@ function OurTeam (){
                             <div className="flex flex-col hidden lg:flex group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="productionTeam.jpg" alt="Production team member" className="w-full h-full object-cover object-top sm:object-[center_85%] xl:object-[center_70%]" />
+                                    <img src="productionTeam.jpg" alt="Production team member" className="w-full h-full object-cover object-top sm:object-[center_85%] xl:object-[center_70%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -160,7 +160,7 @@ function OurTeam (){
                             <div className="flex flex-col hidden lg:flex group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="productionTeamMember2.jpg" alt="Production team member" className="w-full h-full object-cover object-top sm:object-[center_85%] xl:object-[center_70%]" />
+                                    <img src="productionTeamMember2.jpg" alt="Production team member" className="w-full h-full object-cover object-top sm:object-[center_85%] xl:object-[center_70%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}

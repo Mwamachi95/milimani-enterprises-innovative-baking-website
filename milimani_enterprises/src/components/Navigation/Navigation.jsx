@@ -7,9 +7,78 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
   const hamburgerButtonRef = useRef(null);
+  const [typewriterText, setTypewriterText] = useState('Milimani Enterprises');
+  const [typewriterSubText, setTypewriterSubText] = useState('Innovative Baking');
   
   // Check if current page is About Us
   const isAboutUsPage = window.location.pathname === '/aboutUs';
+  
+  // Typewriter effect
+  useEffect(() => {
+    const mainText = 'Milimani Enterprises';
+    const subText = 'Innovative Baking';
+    let mainTimeout, subTimeout;
+    
+    if (fadeTriggered) {
+      // Type away effect - remove characters (subtitle first, then main text)
+      let mainIndex = mainText.length;
+      let subIndex = subText.length;
+      
+      const typeAwayMain = () => {
+        if (mainIndex > 0) {
+          setTypewriterText(mainText.substring(0, mainIndex - 1));
+          mainIndex--;
+          mainTimeout = setTimeout(typeAwayMain, 50);
+        }
+      };
+      
+      const typeAwaySub = () => {
+        if (subIndex > 0) {
+          setTypewriterSubText(subText.substring(0, subIndex - 1));
+          subIndex--;
+          subTimeout = setTimeout(typeAwaySub, 50);
+        } else {
+          // Start typing away main text after subtitle is complete
+          setTimeout(typeAwayMain, 200);
+        }
+      };
+      
+      // Start with subtitle retraction
+      typeAwaySub();
+    } else {
+      // Type out effect - add characters
+      let mainIndex = 0;
+      let subIndex = 0;
+      
+      setTypewriterText('');
+      setTypewriterSubText('');
+      
+      const typeOutMain = () => {
+        if (mainIndex < mainText.length) {
+          setTypewriterText(mainText.substring(0, mainIndex + 1));
+          mainIndex++;
+          mainTimeout = setTimeout(typeOutMain, 80);
+        } else {
+          // Start typing sub text after main text is complete
+          const typeOutSub = () => {
+            if (subIndex < subText.length) {
+              setTypewriterSubText(subText.substring(0, subIndex + 1));
+              subIndex++;
+              subTimeout = setTimeout(typeOutSub, 80);
+            }
+          };
+          typeOutSub();
+        }
+      };
+      
+      typeOutMain();
+    }
+    
+    return () => {
+      clearTimeout(mainTimeout);
+      clearTimeout(subTimeout);
+    };
+  }, [fadeTriggered]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,20 +186,19 @@ const Navigation = () => {
           {/* Logo Text Container */}
           <div 
             className="whitespace-nowrap relative z-0"
-            style={{
-              opacity: fadeTriggered ? 0 : 1,
-              transform: `translateX(-${fadeTriggered ? (window.innerWidth >= 768 && window.innerWidth < 1024 ? 65 : 90) : 0}px)`,
-              transition: 'opacity 1s ease-out, transform 1s ease-out'
-            }}
           >
             <div className="font-sora">
               <div className={`text-lg md:text-[1.5rem] lg:text-[2rem] font-bold leading-none ${
-                isAboutUsPage ? 'text-dark-hunter-green' : 'text-white'
+                isMobileMenuOpen 
+                  ? 'text-white' 
+                  : isAboutUsPage 
+                    ? 'text-dark-hunter-green' 
+                    : 'text-white'
               }`}>
-                Milimani Enterprises
+                {typewriterText}
               </div>
               <div className="text-sm md:text-[1rem] lg:text-[1.5rem] font-medium text-luscious-lime leading-none">
-                Innovative Baking
+                {typewriterSubText}
               </div>
             </div>
           </div>
@@ -242,7 +310,7 @@ const Navigation = () => {
           <a 
             href="/aboutUs"
             onClick={closeMobileMenu}
-            className="w-screen text-2xl font-semibold text-white py-6 hover:bg-white hover:bg-opacity-10 transition-all duration-200 border-b border-white border-opacity-20 -ml-8 pl-8"
+            className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 border-b border-white border-opacity-20 -ml-8 pl-8"
           >
             Company
           </a>
@@ -251,7 +319,7 @@ const Navigation = () => {
           <a 
             href="/contactUs"
             onClick={closeMobileMenu}
-            className="w-screen text-2xl font-semibold text-white py-6 hover:bg-white hover:bg-opacity-10 transition-all duration-200 -ml-8 pl-8"
+            className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 -ml-8 pl-8"
           >
             Let's Talk
           </a>
