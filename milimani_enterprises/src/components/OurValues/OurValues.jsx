@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
 
 function OurValues() {
   const values = [
@@ -36,40 +38,48 @@ function OurValues() {
         <div className="w-full flex flex-col gap-20 overflow-x-auto">
           {/* Heading */}
           <h1 className="heading1">Our Values</h1>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* Values dropdown */}
+            <div className="max-w-7xl">
+              {values.map((item, index) => (
+                <div key={index} className="flex flex-col gap-3 mb-6">
+                  {/* Toggle header */}
+                  <div
+                    className="flex items-center justify-between gap-3 cursor-pointer"
+                    onClick={() => toggle(index)}
+                  >
+                    <p className="text-2xl font-semibold text-white">{item.title}</p>
+                    <img
+                      src="arrowDown.svg"
+                      alt="arrow"
+                      className={`w-10 transition-transform duration-300 ${
+                        openIndex === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
 
-          {/* Values dropdown */}
-          <div className="max-w-7xl">
-            {values.map((item, index) => (
-              <div key={index} className="flex flex-col gap-3 mb-6">
-                {/* Toggle header */}
-                <div
-                  className="flex items-center justify-between gap-3 cursor-pointer"
-                  onClick={() => toggle(index)}
-                >
-                  <p className="text-2xl font-semibold text-white">{item.title}</p>
-                  <img
-                    src="arrowDown.svg"
-                    alt="arrow"
-                    className={`w-10 transition-transform duration-300 ${
-                      openIndex === index ? 'rotate-180' : ''
+                  {/* Animated dropdown content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
-                  />
-                </div>
+                  >
+                    <p className="text1 mt-2 text-white">{item.description}</p>
+                  </div>
 
-                {/* Animated dropdown content */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <p className="text1 mt-2 text-white">{item.description}</p>
+                  {/* Separator */}
+                  <hr className="border-white-900 my-5" />
                 </div>
+              ))}
+            </div>  
+          </motion.div>
 
-                {/* Separator */}
-                <hr className="border-white-900 my-5" />
-              </div>
-            ))}
-          </div>
+          
         </div>
       </div>
     </div>

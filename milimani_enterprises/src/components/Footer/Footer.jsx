@@ -11,7 +11,7 @@ function Footer(){
 
     return ( 
         <>
-            <div style={{ backgroundColor: '#163033' }} 
+            <div style={{ backgroundColor: '#143e45' }} 
                 className="min-w-50 w-full lg:w-screen p-8 sm:p-15 flex flex-col gap-10 text-white overflow-x-auto">
                     <div className="w-full flex justify-center">
                         <div className="w-full max-w-7xl flex flex-col gap-10">
@@ -122,5 +122,5 @@ function Footer(){
 }
 export default Footer;
 
-// Change color of the social media icons on hover wet to sand sand
-// Underline on the page links
+// TO DO: Change color of the social media icons on hover wet to sand sand
+// TO DO: Underline on the page links

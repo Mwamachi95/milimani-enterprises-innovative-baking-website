@@ -5,6 +5,8 @@ import AboutUsHero from "../components/AboutUsHero/AboutUsHero";
 import NavBar from "../components/NavBar/NavBar";
 import AboutUsWidgets from "../components/AboutUsWidgets/AboutUsWidgets";
 import Slideshow from "../components/Slideshow/Slideshow";
+import { motion } from 'framer-motion';
+
 function aboutUs() {
   return (
     <>
@@ -13,19 +15,38 @@ function aboutUs() {
       
 
       {/* About Us Hero Section */}
-      <AboutUsHero />
+      <AboutUsHero />  
+      
 
       {/* About Us Widgets */}
-      <AboutUsWidgets />
+      <AboutUsWidgets />  
+      
       
       {/* Our Values Section */}
-      <OurValues />
+      <OurValues />  
+      
 
       {/* Our Team Section */}
-      <OurTeam />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <OurTeam />  
+      </motion.div>
+      
 
       {/* Slideshow */}
-      <Slideshow />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Slideshow />  
+      </motion.div>
+      
 
       {/* Footer */}
       <Footer />
