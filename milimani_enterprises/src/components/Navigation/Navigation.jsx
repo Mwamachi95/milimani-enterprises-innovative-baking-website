@@ -7,6 +7,9 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
   const hamburgerButtonRef = useRef(null);
+  
+  // Check if current page is About Us
+  const isAboutUsPage = window.location.pathname === '/aboutUs';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +22,7 @@ const Navigation = () => {
       } else {
         setFadeTriggered(false);
       }
+
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -74,9 +78,18 @@ const Navigation = () => {
   const isScrolled = scrollY > 20;
 
   return (
-    <nav className={`sticky top-0 z-50 backdrop-blur-sm transition-all duration-1000 ${
-      isMobileMenuOpen ? 'bg-dark-hunter-green' : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 ${
+      isMobileMenuOpen 
+        ? 'bg-dark-hunter-green backdrop-blur-sm' 
+        : isScrolled 
+          ? 'backdrop-blur-sm shadow-xl' 
+          : 'bg-transparent'
+    }`} style={isScrolled && !isMobileMenuOpen ? {
+      background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)',
+      borderRadius: '0 0 0 0',
+      backdropFilter: 'blur(6px) saturate(150%) contrast(120%) brightness(105%)',
+      WebkitBackdropFilter: 'blur(6px) saturate(150%) contrast(120%) brightness(105%)',
+    } : {}}>
       <div className={`flex justify-between items-center px-8 md:px-6 lg:px-8 transition-all duration-1000 ${
         isScrolled 
           ? 'py-4' 
@@ -112,7 +125,7 @@ const Navigation = () => {
           >
             <div className="font-sora">
               <div className={`text-lg md:text-[1.5rem] lg:text-[2rem] font-bold leading-none ${
-                isMobileMenuOpen ? 'text-white' : 'text-bokara-grey'
+                isAboutUsPage ? 'text-dark-hunter-green' : 'text-white'
               }`}>
                 Milimani Enterprises
               </div>

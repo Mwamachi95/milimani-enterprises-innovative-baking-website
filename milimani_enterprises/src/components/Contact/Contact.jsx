@@ -82,9 +82,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-dark-hunter-green min-h-screen px-8 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
+    <div className="bg-dark-hunter-green min-h-screen px-8 md:px-12 lg:px-16 pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-20 lg:pb-24">
       {/* First Container - LET'S TALK standalone */}
-      <div className="mb-8 md:mb-12 lg:mb-16">
+      <div className="mb-2 md:mb-3 lg:mb-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora text-white leading-tight tracking-tight">
           LET'S TALK
         </h1>
@@ -195,10 +195,10 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="relative group bg-luscious-lime text-dark-hunter-green font-sora font-bold rounded-xl overflow-hidden text-sm md:text-base lg:text-lg px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 flex items-center justify-center gap-3 md:gap-4 w-full md:w-auto transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="relative group bg-wet-sand text-dark-hunter-green font-sora font-bold rounded-xl overflow-hidden text-sm md:text-base lg:text-lg px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 flex items-center justify-center gap-3 md:gap-4 w-full md:w-auto transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {/* Sliding background */}
-              <div className="absolute bottom-0 left-0 w-full h-0 bg-wet-sand group-hover:h-full transition-all duration-400 ease-out" />
+              <div className="absolute bottom-0 left-0 w-full h-0 bg-luscious-lime group-hover:h-full transition-all duration-400 ease-out" />
               
               {/* Text Stack Animation */}
               <div className="relative z-10 overflow-hidden">
