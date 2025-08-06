@@ -1,7 +1,13 @@
+import Footer from "../components/Footer/footer";
+import ContactForm from "../components/ContactForm/ContactForm";
 function contactUs(){
     return (
         <>
-            <h1 className="text-3xl font-bold">Contact Us</h1>
+            {/* Form */}
+            <ContactForm />
+            
+            {/* Footer */}
+            <Footer />                
         </>
     )
 }

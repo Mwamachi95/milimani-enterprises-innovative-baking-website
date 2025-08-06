@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import OurTeam from './OurTeam';
 
 test('redeers all the text elements', () => {
-    // Render the OurTeam component wrapped in MemoryRouter
+    // Render the OurTeam component
     render(<OurTeam />);
     
     // Check if the main title is present
