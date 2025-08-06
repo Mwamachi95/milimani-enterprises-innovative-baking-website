@@ -4,11 +4,12 @@ import OurTeam from "../components/OurTeam/OurTeam";
 import AboutUsHero from "../components/AboutUsHero/AboutUsHero";
 import NavBar from "../components/NavBar/NavBar";
 import AboutUsWidgets from "../components/AboutUsWidgets/AboutUsWidgets";
+import Slideshow from "../components/Slideshow/Slideshow";
 function aboutUs() {
   return (
     <>
       {/* Navigation Bar */}
-      <NavBar/>
+      {/* <NavBar/> */}
       
 
       {/* About Us Hero Section */}
@@ -22,6 +23,9 @@ function aboutUs() {
 
       {/* Our Team Section */}
       <OurTeam />
+
+      {/* Slideshow */}
+      <Slideshow />
 
       {/* Footer */}
       <Footer />
