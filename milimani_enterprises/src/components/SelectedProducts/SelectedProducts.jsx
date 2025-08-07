@@ -73,7 +73,7 @@ const SelectedProducts = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col"
+            className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col h-full"
           >
             {/* Product Image */}
             <div className="aspect-[3/4] overflow-hidden relative z-20">
@@ -92,7 +92,7 @@ const SelectedProducts = () => {
               <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
               
               {/* Product Info Content */}
-              <div className="relative z-20 p-6 flex flex-col justify-between h-full">
+              <div className="relative z-20 p-6 flex flex-col justify-between h-full min-h-[120px]">
                 {/* Product Name */}
                 <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
                   {product.name}

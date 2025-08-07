@@ -4,17 +4,17 @@ import { staggerContainer, staggerItem } from '../animations/variants';
 
 const ServicesSection = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkIfDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
     };
 
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
+    checkIfDesktop();
+    window.addEventListener('resize', checkIfDesktop);
 
-    return () => window.removeEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfDesktop);
   }, []);
 
   const services = [
@@ -42,26 +42,30 @@ const ServicesSection = () => {
 
 
   const handleMouseEnter = (serviceId) => {
-    // Only use hover effect on larger screens
-    if (!isMobile) {
+    // Only use hover effect on desktop screens (1024px+) and only if not touch device
+    if (isDesktop && !('ontouchstart' in window)) {
       setActiveAccordion(serviceId);
     }
   };
 
   const handleMouseLeave = () => {
-    // Only use hover effect on larger screens
-    if (!isMobile) {
+    // Only use hover effect on desktop screens (1024px+) and only if not touch device
+    if (isDesktop && !('ontouchstart' in window)) {
       setActiveAccordion(null);
     }
   };
 
   const handleClick = (serviceId, event) => {
-    // Prevent event bubbling
+    // Always prevent event bubbling
     event.preventDefault();
     event.stopPropagation();
     
-    // On mobile devices, use click to toggle
-    if (isMobile) {
+    // On touch devices or non-desktop, always use click to toggle
+    // On desktop non-touch devices, click should also work as fallback
+    if (!isDesktop || ('ontouchstart' in window)) {
+      setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
+    } else {
+      // Even on desktop, allow click toggle as fallback
       setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
     }
   };

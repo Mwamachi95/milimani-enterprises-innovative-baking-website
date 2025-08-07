@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 function AboutUsHero(){
     return(
         <>
-        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 px-6 md:px-8 pt-32 pb-16 md:pt-40 md:pb-40">
+        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 px-6 md:px-8 pt-40 pb-16 md:pt-72 md:pb-40 lg:pt-32">
 
             <div className="w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center">
 

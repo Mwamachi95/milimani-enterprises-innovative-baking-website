@@ -88,7 +88,7 @@ function Footer(){
                                     </div>
 
                                     {/* Pages */}
-                                    <div className="hidden md:flex flex-col items-start gap-3">
+                                    <div className="hidden xl:flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Pages</p>
                                         <li onClick={() => {
                                             window.scrollTo(0, 0);
