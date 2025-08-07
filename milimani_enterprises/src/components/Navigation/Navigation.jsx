@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import logoIcon from '../../assets/images/logos/Milimani Enterprises Logo.svg';
 
 const Navigation = () => {
@@ -166,8 +167,8 @@ const Navigation = () => {
       }`}>
         
         {/* Logo Container */}
-        <a 
-          href="/" 
+        <Link 
+          to="/" 
           className="flex items-center gap-2 md:gap-3 lg:gap-4 cursor-pointer group"
         >
           {/* Logo Icon */}
@@ -202,25 +203,25 @@ const Navigation = () => {
               </div>
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links Container */}
         <div className="hidden md:flex items-center gap-x-4 md:gap-x-3 lg:gap-x-4">
           
           {/* Company Link */}
-          <a 
-            href="/aboutUs"
+          <Link 
+            to="/aboutUs"
             className="relative group bg-dark-hunter-green text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center overflow-hidden transition-all duration-300"
           >
             <span className="relative z-10">
               Company
               <div className="absolute top-full left-0 w-0 h-0.5 bg-whisper-white group-hover:w-full transition-all duration-300"></div>
             </span>
-          </a>
+          </Link>
 
           {/* Let's Talk Button */}
-          <a 
-            href="/contactUs"
+          <Link 
+            to="/contactUs"
             className="relative group bg-wet-sand text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center gap-6 overflow-hidden transition-all duration-300"
           >
             {/* Background Animation */}
@@ -255,7 +256,7 @@ const Navigation = () => {
                 />
               </svg>
             </div>
-          </a>
+          </Link>
           
         </div>
 

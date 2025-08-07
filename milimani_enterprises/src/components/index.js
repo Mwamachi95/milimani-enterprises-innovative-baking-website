@@ -6,3 +6,4 @@ export { default as Navigation } from './Navigation/Navigation';
 export { default as Logo } from './Logo/Logo';
 export { default as OurTeam } from './OurTeam/OurTeam';
 export { default as OurValues } from './OurValues/OurValues';
+export { default as PageTransition } from './PageTransition/PageTransition';

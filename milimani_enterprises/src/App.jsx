@@ -1,17 +1,40 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { BackToTop } from './components'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { BackToTop, PageTransition } from './components'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/contactUs'
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        } />
+        <Route path="/aboutUs" element={
+          <PageTransition>
+            <AboutUs />
+          </PageTransition>
+        } />
+        <Route path="/contactUs" element={
+          <PageTransition>
+            <ContactUs />
+          </PageTransition>
+        } />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/aboutUs" element={<AboutUs/>} />
-        <Route path="/contactUs" element={<ContactUs/>} />
-      </Routes>
+      <AnimatedRoutes />
       <BackToTop />
     </BrowserRouter>
   )
