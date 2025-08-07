@@ -26,18 +26,28 @@ const OurValues = () => {
     }
   ];
 
+  const handleToggle = (valueId) => {
+    setActiveAccordion(activeAccordion === valueId ? null : valueId);
+  };
+
   const handleMouseEnter = (valueId) => {
-    setActiveAccordion(valueId);
+    // Only use hover effect on larger screens
+    if (window.innerWidth >= 768) {
+      setActiveAccordion(valueId);
+    }
   };
 
   const handleMouseLeave = () => {
-    setActiveAccordion(null);
+    // Only use hover effect on larger screens
+    if (window.innerWidth >= 768) {
+      setActiveAccordion(null);
+    }
   };
 
   return (
-    <section className="bg-wet-sand min-h-screen px-8 md:px-12 lg:px-16" id="our-values">
+    <section className="bg-wet-sand px-8 md:px-12 lg:px-16" id="our-values">
       {/* Header - Fixed at top */}
-      <div className="pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-12">
+      <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-dark-hunter-green mb-4">
           OUR VALUES
@@ -50,7 +60,7 @@ const OurValues = () => {
       </div>
 
       {/* Accordion sections */}
-      <div className="pb-16 md:pb-20 lg:pb-24">
+      <div className="pb-4 md:pb-20 lg:pb-24">
         {values.map((value, index) => (
           <div
             key={value.id}
@@ -59,10 +69,11 @@ const OurValues = () => {
             } transition-all duration-700 ease-out`}
             onMouseEnter={() => handleMouseEnter(value.id)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleToggle(value.id)}
           >
             {/* Value Title */}
             <div
-              className="w-full flex items-center justify-between py-6 md:py-8 transition-colors duration-300 cursor-pointer"
+              className="w-full flex items-center justify-between py-4 md:py-8 transition-colors duration-300 cursor-pointer"
               aria-expanded={activeAccordion === value.id}
               aria-controls={`value-content-${value.id}`}
             >
@@ -103,7 +114,7 @@ const OurValues = () => {
                 transition: 'max-height 1000ms cubic-bezier(0.4, 0, 0.2, 1), opacity 800ms ease-in-out'
               }}
             >
-              <div className="pb-6 md:pb-8 pr-12">
+              <div className="pb-4 md:pb-8 pr-8 md:pr-12">
                 <p className="text-dark-hunter-green font-sora text-base md:text-lg leading-relaxed max-w-4xl">
                   {value.content}
                 </p>

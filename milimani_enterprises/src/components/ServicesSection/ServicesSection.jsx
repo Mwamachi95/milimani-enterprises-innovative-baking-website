@@ -26,18 +26,28 @@ const ServicesSection = () => {
     }
   ];
 
+  const handleToggle = (serviceId) => {
+    setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
+  };
+
   const handleMouseEnter = (serviceId) => {
-    setActiveAccordion(serviceId);
+    // Only use hover effect on larger screens
+    if (window.innerWidth >= 768) {
+      setActiveAccordion(serviceId);
+    }
   };
 
   const handleMouseLeave = () => {
-    setActiveAccordion(null);
+    // Only use hover effect on larger screens
+    if (window.innerWidth >= 768) {
+      setActiveAccordion(null);
+    }
   };
 
   return (
-    <section className="bg-dark-hunter-green min-h-screen px-8 md:px-12 lg:px-16">
+    <section className="bg-dark-hunter-green px-8 md:px-12 lg:px-16">
       {/* Header - Fixed at top */}
-      <div className="pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-12">
+      <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-wet-sand mb-4">
           OUR SERVICES
@@ -50,7 +60,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Accordion sections */}
-      <div className="pb-16 md:pb-20 lg:pb-24">
+      <div className="pb-4 md:pb-20 lg:pb-24">
         {services.map((service, index) => (
           <div
             key={service.id}
@@ -59,10 +69,11 @@ const ServicesSection = () => {
             } transition-all duration-700 ease-out`}
             onMouseEnter={() => handleMouseEnter(service.id)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleToggle(service.id)}
           >
             {/* Service Title */}
             <div
-              className="w-full flex items-center justify-between py-6 md:py-8 transition-colors duration-300 cursor-pointer"
+              className="w-full flex items-center justify-between py-4 md:py-8 transition-colors duration-300 cursor-pointer"
               aria-expanded={activeAccordion === service.id}
               aria-controls={`service-content-${service.id}`}
             >
@@ -103,7 +114,7 @@ const ServicesSection = () => {
                 transition: 'max-height 1000ms cubic-bezier(0.4, 0, 0.2, 1), opacity 800ms ease-in-out'
               }}
             >
-              <div className="pb-6 md:pb-8 pr-12">
+              <div className="pb-4 md:pb-8 pr-8 md:pr-12">
                 <p className="text-whisper-white font-sora text-base md:text-lg leading-relaxed max-w-4xl">
                   {service.content}
                 </p>
