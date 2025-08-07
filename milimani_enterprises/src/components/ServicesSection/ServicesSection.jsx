@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AnimatedSection } from '../animations';
+import { staggerContainer, staggerItem } from '../animations/variants';
 
 const ServicesSection = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -45,11 +47,12 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-dark-hunter-green px-8 sm:px-15">
+    <AnimatedSection>
+      <section className="bg-dark-hunter-green px-8 sm:px-15">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl">
           {/* Header - Fixed at top */}
-          <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
+          <AnimatedSection className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12" delay={0.2}>
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-wet-sand mb-4">
           OUR SERVICES
@@ -59,13 +62,17 @@ const ServicesSection = () => {
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-sora text-wet-sand leading-tight">
           Driving baking value across every step of the customer journey.
         </h2>
-      </div>
+      </AnimatedSection>
 
       {/* Accordion sections */}
-      <div className="pb-4 md:pb-20 lg:pb-24">
+      <AnimatedSection 
+        variants={staggerContainer} 
+        className="pb-4 md:pb-20 lg:pb-24"
+      >
         {services.map((service, index) => (
-          <div
+          <AnimatedSection
             key={service.id}
+            variants={staggerItem}
             className={`border-b border-whisper-white border-opacity-20 ${
               index === services.length - 1 ? 'border-b-0' : ''
             } transition-all duration-700 ease-out`}
@@ -122,12 +129,13 @@ const ServicesSection = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         ))}
-          </div>
+      </AnimatedSection>
         </div>
       </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 };
 

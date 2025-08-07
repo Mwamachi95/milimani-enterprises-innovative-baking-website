@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { AnimatedSection, AnimatedGrid } from '../animations';
 import vanillaCreamCakeMix from '../../assets/images/home/hero/Vanilla_cream_cake_mix.jpg';
 import vanillaVelvet from '../../assets/images/home/hero/Vanilla_velvet.jpg';
 import vanillaPoundCake from '../../assets/images/home/hero/Vanilla_pound_cake_mix.jpg';
@@ -48,7 +49,7 @@ const SelectedProducts = () => {
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl">
           {/* Header Section */}
-          <div className="text-center">
+          <AnimatedSection className="text-center" delay={0.3}>
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-bokara-grey mb-4 font-bold">
           SELECTED PRODUCTS
@@ -65,10 +66,10 @@ const SelectedProducts = () => {
             </span>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16">
+      <AnimatedGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16" staggerDelay={0.1}>
         {products.map((product) => (
           <div
             key={product.id}
@@ -107,7 +108,7 @@ const SelectedProducts = () => {
             </div>
           </div>
         ))}
-          </div>
+      </AnimatedGrid>
         </div>
       </div>
     </section>

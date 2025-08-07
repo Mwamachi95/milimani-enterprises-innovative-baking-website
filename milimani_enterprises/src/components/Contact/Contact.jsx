@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -84,23 +85,37 @@ const Contact = () => {
   return (
     <div className="bg-dark-hunter-green min-h-screen px-8 md:px-12 lg:px-16 pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-20 lg:pb-24">
       {/* First Container - LET'S TALK standalone */}
-      <div className="mb-2 md:mb-3 lg:mb-4">
+      <motion.div
+        className="mb-2 md:mb-3 lg:mb-4"
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+      >
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora text-white leading-tight tracking-tight">
           LET'S TALK
         </h1>
-      </div>
+      </motion.div>
 
       {/* Second Container - Two-column grid for company description and contact form */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-16 xl:gap-20 items-start">
         {/* Left Column - Company description */}
-        <div className="max-w-sm md:max-w-md lg:max-w-lg">
+        <motion.div
+          className="max-w-sm md:max-w-md lg:max-w-lg"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
           <p className="text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed text-white text-opacity-90">
             We're Rwanda's trusted partner in baking—supplying bold bakers and food businesses with quality ingredients and tools that deliver results. From product to plate, we help you mix it, perfect it, and scale it—again and again.
           </p>
-        </div>
+        </motion.div>
 
         {/* Right Column - Contact Form */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
           <form onSubmit={handleSubmit} className="w-full max-w-sm md:max-w-md lg:max-w-lg">
             {/* First row - Name fields */}
             <div className="grid grid-cols-1 gap-3 md:gap-4 lg:gap-6 mb-3 md:mb-4 lg:mb-6">
@@ -226,7 +241,7 @@ const Contact = () => {
               )}
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

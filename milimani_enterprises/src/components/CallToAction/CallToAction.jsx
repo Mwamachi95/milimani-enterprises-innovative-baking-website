@@ -1,4 +1,6 @@
 import ctaImage from '../../assets/images/home/cta/call_to_action.jpg';
+import { AnimatedSection } from '../animations';
+import { fadeInLeft, fadeInRight } from '../animations';
 
 const CallToAction = () => {
   return (
@@ -17,17 +19,17 @@ const CallToAction = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             
             {/* Left Content Section */}
-            <div className="text-left">
+            <AnimatedSection variants={fadeInLeft} className="text-left">
               <h2 className="font-sora font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-2 md:mb-4">
                 Interested?
               </h2>
               <p className="font-sora font-medium text-lg md:text-xl lg:text-2xl text-whisper-white">
                 Let's Connect
               </p>
-            </div>
+            </AnimatedSection>
             
             {/* Right Content Section */}
-            <div className="text-left">
+            <AnimatedSection variants={fadeInRight} delay={0.2} className="text-left">
               <h3 className="font-sora font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 md:mb-6">
                 Feel free to reach out.
               </h3>
@@ -74,7 +76,7 @@ const CallToAction = () => {
                   </svg>
                 </div>
               </a>
-            </div>
+            </AnimatedSection>
             
           </div>
         </div>

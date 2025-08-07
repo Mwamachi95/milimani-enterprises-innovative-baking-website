@@ -129,15 +129,133 @@ Type safety: Clear prop requirements and expected types
 Accessibility: Maintain semantic HTML and ARIA attributes.
 
 **Prompt 3: Component-Specific Animations**
-Apply animations to existing components using the animation wrappers:
+Apply animations to ALL existing components across Home, AboutUs, and ContactUs pages using the animation wrappers created in the previous step. Focus on enhancing user experience without breaking current functionality.
+Home Page Component Animations:
 
-1. OurTeam component: Wrap team member cards with AnimatedGrid for stagger effect
-2. AboutUsHero component: Add sequential text reveals (heading → description → button)
-3. Footer component: Subtle fade-in when scrolled into view
+LandingHome Component Enhancement:
 
-Requirements:
+Sequential text reveals: Main heading "Milimani Enterprises" fade up with 0.2s delay
+Subtitle animation: "East Africa's Trusted..." fade up with 0.4s delay
+Background image: Subtle scale effect (1.0 to 1.02) on page load with 0.6s delay
+Preserve existing: Text positioning (lower-left), responsive breakpoints, background image styling
 
-- Don't break existing functionality or styling
-- Use consistent timing (0.6s duration, 0.1s stagger)
-- Animations trigger once when elements enter viewport
-- Maintain responsive behavior across breakpoints
+SelectedProducts Component Enhancement:
+
+Header section: "SELECTED PRODUCTS" and rotating text slider fade in with 0.3s delay
+Product grid: Wrap with AnimatedGrid for staggered card reveals (0.1s stagger)
+Animation sequence: Header appears first, then product cards animate one by one
+Preserve existing: 3:4 aspect ratio images, hover effects (bokara grey slide-down), responsive grid layout
+
+ServicesSection Component Enhancement:
+
+Wrap entire section with AnimatedSection for fade-in when scrolled into view
+Header content: "OUR SERVICES" and main heading fade up with 0.2s delay
+Accordion items: Subtle fade-in for each accordion header with 0.1s stagger
+Preserve existing: Upward expansion functionality, hover states, accordion interactions
+
+MessageFromOwner Component Enhancement:
+
+Text content: Staggered text reveals (heading → message → owner info) with 0.2s increments
+Owner image: Fade in from right side with 0.6s delay
+Layout preservation: Maintain two-column desktop layout, single-column mobile
+Preserve existing: Image styling, responsive behavior, text hierarchy
+
+CallToAction Component Enhancement:
+
+Left content: "Interested?" and "Let's Connect" staggered fade-up (0.2s apart)
+Right content: Main CTA text and button sequential animation (0.4s, 0.6s delays)
+Button enhancement: Enhance existing hover animations with subtle motion effects
+Preserve existing: Background image overlay, button functionality, text stack animations
+
+AboutUs Page Component Animations:
+
+AboutUsHero Component Enhancement:
+
+Sequential text reveals: Main heading → description → button → illustration
+Animation delays: 0.2s, 0.4s, 0.6s, 0.8s respectively
+Preserve existing: Responsive layout, button functionality, baker illustration positioning
+
+OurValues Component Enhancement:
+
+Section header: "Our Values" fade-in with 0.2s delay
+Values list: Each accordion item fades in with 0.1s stagger
+Integration: Work with existing accordion functionality (when implemented)
+Preserve existing: Dropdown behavior, separator lines, text content
+
+OurTeam Component Enhancement:
+
+Section title: "We are the people who make up Milimani Enterprises" staggered reveal
+Team grid: Wrap with AnimatedGrid for card stagger (0.1s delay between members)
+Preserve existing: Grid responsiveness, image overlays, team member information
+
+ContactUs Page Component Animations:
+
+Contact Component Enhancement:
+
+Left column: "LET'S TALK" standalone block fade-in with 0.2s delay
+Company description: Fade-up animation with 0.4s delay
+Form fields: Sequential fade-in for each form field (first name, last name, email, company, message)
+Submit button: Enhance existing hover animations with motion effects
+Preserve existing: Form alignment with description text, all form functionality, button hover effects
+
+ContactLocation Component Enhancement:
+
+Section heading: "LOCATION" fade-in with 0.2s delay
+Location card: Slide up from bottom with subtle shadow enhancement
+Image overlay: "CONVENTION CENTRE" text fade-in after card animation
+Preserve existing: Card styling, image aspect ratio, location information
+
+Shared Component Animations:
+
+Navigation Component Enhancement:
+
+DO NOT MODIFY: Keep existing sophisticated scroll animations and mobile menu functionality
+Integration only: Ensure Navigation works with page transitions
+Preserve existing: Logo text fade, glassmorphism effects, mobile menu behavior
+
+Footer Component Enhancement:
+
+Wrap entire footer with AnimatedSection for subtle entrance
+Animation: Simple fade-in from bottom when footer enters viewport (0.6s duration)
+Preserve existing: All navigation functionality, responsive layout, social media links, hover effects
+
+BackToTop Component Enhancement (when integrated):
+
+Show animation: Fade-in with slight scale when appearing
+Hide animation: Fade-out when scrolling back to top
+Hover effects: Subtle scale or color transition enhancements
+Preserve existing: Scroll position logic, smooth scroll functionality
+
+Cross-Page Animation Guidelines:
+
+Consistent timing across all pages:
+
+Standard duration: 0.6s for main animations
+Stagger delays: 0.1s for grid items, 0.2s for text sequences
+Scroll triggers: 30% visibility threshold for most components
+Mobile optimization: Same timing, ensure smooth performance
+
+Page-specific considerations:
+
+Home page: Focus on hero impact and product showcase
+AboutUs page: Emphasize team and values presentation
+ContactUs page: Highlight form usability and location clarity
+All pages: Maintain professional, cohesive animation language
+
+Performance and Integration Requirements:
+
+Component compatibility:
+
+Work with ALL existing Tailwind classes and responsive design
+Preserve ALL interactive functionality (forms, navigation, hover states)
+Maintain existing animations (don't conflict with button hovers, scroll effects)
+Cross-browser consistency across all components and pages
+
+Animation optimization:
+
+Use whileInView with viewport={{ once: true }} for all scroll-triggered animations
+Stagger children appropriately for grid layouts (SelectedProducts, OurTeam)
+Sequential delays for text-heavy components (heroes, content sections)
+Subtle enhancements for interactive elements without breaking functionality
+
+The result should be a cohesive, professional animation system that enhances user experience across the entire website while maintaining all existing functionality, responsive design, and interactive elements on every page.

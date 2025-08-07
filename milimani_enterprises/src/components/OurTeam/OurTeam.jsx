@@ -1,21 +1,24 @@
+import { AnimatedSection, AnimatedGrid } from '../animations';
+import { fadeInUp } from '../animations';
+
 function OurTeam (){
     return (
         <>
             <div className="min-w-50 w-full sm:w-screen p-8 sm:p-15 flex flex-col gap-20 overflow-x-auto">
                 {/* Title */}
-                <div className="flex flex-col gap-4 sm:items-center">
+                <AnimatedSection variants={fadeInUp} className="flex flex-col gap-4 sm:items-center">
                     <h1 className="text-4xl font-semibold text-black sm:text-center text-left">We are the people who make up</h1>
                     <h1 className="text-4xl font-semibold text-left sm:text-center text-left"> 
                         <span className="text-center font-bold text-white pl-2 pr-2" style={{backgroundColor: '#7cbf00'}}>
                            Milimani Enterprises
                         </span>
                     </h1>
-                </div>
+                </AnimatedSection>
 
                 {/* Team Members */}
                 <div className="w-full flex justify-center">
                     <div className="w-full max-w-7xl">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
                             {/* Founder */}
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
@@ -176,7 +179,7 @@ function OurTeam (){
                                 </div>
                             </div>
 
-                        </div> 
+                        </AnimatedGrid> 
                     </div>   
                 </div>
                 

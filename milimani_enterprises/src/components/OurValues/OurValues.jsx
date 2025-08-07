@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AnimatedSection } from '../animations';
+import { fadeInUp, staggerContainer, staggerItem } from '../animations';
 
 const OurValues = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -47,7 +49,7 @@ const OurValues = () => {
   return (
     <section className="bg-wet-sand px-8 md:px-12 lg:px-16" id="our-values">
       {/* Header - Fixed at top */}
-      <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
+      <AnimatedSection variants={fadeInUp} className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-dark-hunter-green mb-4">
           OUR VALUES
@@ -57,13 +59,17 @@ const OurValues = () => {
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-sora text-dark-hunter-green leading-tight">
           The principles that guide our commitment to excellence.
         </h2>
-      </div>
+      </AnimatedSection>
 
       {/* Accordion sections */}
-      <div className="pb-4 md:pb-20 lg:pb-24">
+      <AnimatedSection 
+        variants={staggerContainer} 
+        className="pb-4 md:pb-20 lg:pb-24"
+      >
         {values.map((value, index) => (
-          <div
+          <AnimatedSection
             key={value.id}
+            variants={staggerItem}
             className={`border-b border-dark-hunter-green border-opacity-20 ${
               index === values.length - 1 ? 'border-b-0' : ''
             } transition-all duration-700 ease-out`}
@@ -120,9 +126,9 @@ const OurValues = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         ))}
-      </div>
+      </AnimatedSection>
     </section>
   );
 };

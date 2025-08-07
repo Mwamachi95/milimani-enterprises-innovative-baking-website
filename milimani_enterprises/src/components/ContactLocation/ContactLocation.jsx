@@ -1,16 +1,21 @@
 import kigaliImage from '../../assets/images/home/contact/kigali.jpg';
+import { AnimatedSection } from '../animations';
+import { fadeInUp } from '../animations';
 
 const ContactLocation = () => {
   return (
     <div className="bg-dark-hunter-green px-8 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora text-white leading-tight tracking-tight mb-8 md:mb-12 lg:mb-16">
+        <AnimatedSection variants={fadeInUp}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora text-white leading-tight tracking-tight mb-8 md:mb-12 lg:mb-16">
           LOCATION
-        </h2>
+          </h2>
+        </AnimatedSection>
 
         {/* Image card section */}
-        <div className="bg-white rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl overflow-hidden">
+        <AnimatedSection variants={fadeInUp} delay={0.2}>
+          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl overflow-hidden">
           {/* Image section */}
           <div className="h-64 md:h-80 lg:h-96">
             <img
@@ -32,7 +37,8 @@ const ContactLocation = () => {
               Industrial Area
             </p>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
       </div>
     </div>
   );
