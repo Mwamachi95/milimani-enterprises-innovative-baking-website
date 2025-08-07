@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatedSection } from '../animations';
 import { fadeInUp, staggerContainer, staggerItem } from '../animations';
 
 const OurValues = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const values = [
     {
@@ -28,21 +40,29 @@ const OurValues = () => {
     }
   ];
 
-  const handleToggle = (valueId) => {
-    setActiveAccordion(activeAccordion === valueId ? null : valueId);
-  };
 
   const handleMouseEnter = (valueId) => {
     // Only use hover effect on larger screens
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       setActiveAccordion(valueId);
     }
   };
 
   const handleMouseLeave = () => {
     // Only use hover effect on larger screens
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       setActiveAccordion(null);
+    }
+  };
+
+  const handleClick = (valueId, event) => {
+    // Prevent event bubbling
+    event.preventDefault();
+    event.stopPropagation();
+    
+    // On mobile devices, use click to toggle
+    if (isMobile) {
+      setActiveAccordion(activeAccordion === valueId ? null : valueId);
     }
   };
 
@@ -73,15 +93,15 @@ const OurValues = () => {
             className={`border-b border-dark-hunter-green border-opacity-20 ${
               index === values.length - 1 ? 'border-b-0' : ''
             } transition-all duration-700 ease-out`}
-            onMouseEnter={() => handleMouseEnter(value.id)}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => handleToggle(value.id)}
           >
             {/* Value Title */}
             <div
               className="w-full flex items-center justify-between py-4 md:py-8 transition-colors duration-300 cursor-pointer"
               aria-expanded={activeAccordion === value.id}
               aria-controls={`value-content-${value.id}`}
+              onMouseEnter={() => handleMouseEnter(value.id)}
+              onMouseLeave={handleMouseLeave}
+              onClick={(event) => handleClick(value.id, event)}
             >
               <span className="text-left text-lg md:text-xl lg:text-2xl font-sora font-semibold text-dark-hunter-green">
                 {value.title}

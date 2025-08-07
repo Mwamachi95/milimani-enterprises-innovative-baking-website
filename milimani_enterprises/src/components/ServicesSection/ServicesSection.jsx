@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatedSection } from '../animations';
 import { staggerContainer, staggerItem } from '../animations/variants';
 
 const ServicesSection = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const services = [
     {
@@ -28,21 +40,29 @@ const ServicesSection = () => {
     }
   ];
 
-  const handleToggle = (serviceId) => {
-    setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
-  };
 
   const handleMouseEnter = (serviceId) => {
     // Only use hover effect on larger screens
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       setActiveAccordion(serviceId);
     }
   };
 
   const handleMouseLeave = () => {
     // Only use hover effect on larger screens
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       setActiveAccordion(null);
+    }
+  };
+
+  const handleClick = (serviceId, event) => {
+    // Prevent event bubbling
+    event.preventDefault();
+    event.stopPropagation();
+    
+    // On mobile devices, use click to toggle
+    if (isMobile) {
+      setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
     }
   };
 
@@ -76,15 +96,15 @@ const ServicesSection = () => {
             className={`border-b border-whisper-white border-opacity-20 ${
               index === services.length - 1 ? 'border-b-0' : ''
             } transition-all duration-700 ease-out`}
-            onMouseEnter={() => handleMouseEnter(service.id)}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => handleToggle(service.id)}
           >
             {/* Service Title */}
             <div
               className="w-full flex items-center justify-between py-4 md:py-8 transition-colors duration-300 cursor-pointer"
               aria-expanded={activeAccordion === service.id}
               aria-controls={`service-content-${service.id}`}
+              onMouseEnter={() => handleMouseEnter(service.id)}
+              onMouseLeave={handleMouseLeave}
+              onClick={(event) => handleClick(service.id, event)}
             >
               <span className="text-left text-lg md:text-xl lg:text-2xl font-sora font-semibold text-whisper-white">
                 {service.title}

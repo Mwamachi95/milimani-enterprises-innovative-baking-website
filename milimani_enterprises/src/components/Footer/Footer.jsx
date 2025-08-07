@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AnimatedSection } from '../animations';
 import { fadeInUp } from '../animations';
 
@@ -9,7 +9,6 @@ function Footer(){
 
     // Import necessary hooks from react-router-dom
     const navigate = useNavigate();
-    const location = useLocation();
 
     return ( 
         <>
@@ -91,19 +90,28 @@ function Footer(){
                                     {/* Pages */}
                                     <div className="hidden md:flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Pages</p>
-                                        <li onClick={() => navigate("/")} className="list-none cursor-pointer group">
+                                        <li onClick={() => {
+                                            window.scrollTo(0, 0);
+                                            navigate("/");
+                                        }} className="list-none cursor-pointer group">
                                             <a className="text-sm relative">
                                                 Home
                                                 <div className="absolute top-full left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
                                             </a>
                                         </li>
-                                        <li onClick={() => navigate("/aboutUs")} className="list-none cursor-pointer group">
+                                        <li onClick={() => {
+                                            window.scrollTo(0, 0);
+                                            navigate("/aboutUs");
+                                        }} className="list-none cursor-pointer group">
                                             <a className="text-sm relative">
                                                 About Us
                                                 <div className="absolute top-full left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
                                             </a>
                                         </li>
-                                        <li onClick={() => navigate("/contactUs")} className="list-none cursor-pointer group">
+                                        <li onClick={() => {
+                                            window.scrollTo(0, 0);
+                                            navigate("/contactUs");
+                                        }} className="list-none cursor-pointer group">
                                             <a className="text-sm relative">
                                                 Contact Us
                                                 <div className="absolute top-full left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>

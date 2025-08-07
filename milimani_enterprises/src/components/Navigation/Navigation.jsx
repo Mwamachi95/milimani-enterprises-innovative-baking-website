@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoIcon from '../../assets/images/logos/Milimani Enterprises Logo.svg';
 
 const Navigation = () => {
@@ -11,8 +11,21 @@ const Navigation = () => {
   const [typewriterText, setTypewriterText] = useState('Milimani Enterprises');
   const [typewriterSubText, setTypewriterSubText] = useState('Innovative Baking');
   
+  // Get current location
+  const location = useLocation();
+  
   // Check if current page is About Us
-  const isAboutUsPage = window.location.pathname === '/aboutUs';
+  const isAboutUsPage = location.pathname === '/aboutUs';
+  
+  // Same-page navigation handler
+  const handleSamePageNavigation = (targetPath, event) => {
+    if (location.pathname === targetPath) {
+      event.preventDefault();
+      window.scrollTo(0, 0);
+      return true;
+    }
+    return false;
+  };
   
   // Typewriter effect
   useEffect(() => {
@@ -170,6 +183,11 @@ const Navigation = () => {
         <Link 
           to="/" 
           className="flex items-center gap-2 md:gap-3 lg:gap-4 cursor-pointer group"
+          onClick={(event) => {
+            if (!handleSamePageNavigation('/', event)) {
+              window.scrollTo(0, 0);
+            }
+          }}
         >
           {/* Logo Icon */}
           <div className={`transition-all duration-300 relative z-50 ${
@@ -211,6 +229,11 @@ const Navigation = () => {
           {/* Company Link */}
           <Link 
             to="/aboutUs"
+            onClick={(event) => {
+              if (!handleSamePageNavigation('/aboutUs', event)) {
+                window.scrollTo(0, 0);
+              }
+            }}
             className="relative group bg-dark-hunter-green text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center overflow-hidden transition-all duration-300"
           >
             <span className="relative z-10">
@@ -222,6 +245,11 @@ const Navigation = () => {
           {/* Let's Talk Button */}
           <Link 
             to="/contactUs"
+            onClick={(event) => {
+              if (!handleSamePageNavigation('/contactUs', event)) {
+                window.scrollTo(0, 0);
+              }
+            }}
             className="relative group bg-wet-sand text-whisper-white font-sora text-[1.5rem] md:text-[1rem] lg:text-[1.5rem] font-bold px-4 md:px-3 lg:px-4 py-3 md:py-2 lg:py-3 rounded-xl h-full flex items-center gap-6 overflow-hidden transition-all duration-300"
           >
             {/* Background Animation */}
@@ -308,22 +336,32 @@ const Navigation = () => {
         <div className="flex flex-col justify-start h-full pt-8 px-8">
           
           {/* Company Link Mobile */}
-          <a 
-            href="/aboutUs"
-            onClick={closeMobileMenu}
+          <Link 
+            to="/aboutUs"
+            onClick={(event) => {
+              if (!handleSamePageNavigation('/aboutUs', event)) {
+                window.scrollTo(0, 0);
+              }
+              closeMobileMenu();
+            }}
             className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 border-b border-white border-opacity-20 -ml-8 pl-8"
           >
             Company
-          </a>
+          </Link>
 
           {/* Let's Talk Link Mobile */}
-          <a 
-            href="/contactUs"
-            onClick={closeMobileMenu}
+          <Link 
+            to="/contactUs"
+            onClick={(event) => {
+              if (!handleSamePageNavigation('/contactUs', event)) {
+                window.scrollTo(0, 0);
+              }
+              closeMobileMenu();
+            }}
             className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 -ml-8 pl-8"
           >
             Let's Talk
-          </a>
+          </Link>
           
         </div>
       </div>
