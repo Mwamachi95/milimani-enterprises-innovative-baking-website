@@ -2,8 +2,10 @@ import ownerImage from '../../assets/images/home/owner/Message_from_owner.jpg';
 
 const MessageFromOwner = () => {
   return (
-    <section className="bg-whisper-white px-8 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.6fr_1fr] xl:grid-cols-[1.8fr_1fr] gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
+    <section className="bg-whisper-white px-8 sm:px-15 py-16 md:py-20 lg:py-24">
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.6fr_1fr] xl:grid-cols-[1.8fr_1fr] gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           
           {/* Text Content Section */}
           <div className="max-w-2xl md:max-w-none">
@@ -41,8 +43,10 @@ const MessageFromOwner = () => {
               />
             </div>
           </div>
-          
+            
+          </div>
         </div>
+      </div>
     </section>
   );
 };

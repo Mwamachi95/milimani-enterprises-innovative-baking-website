@@ -12,8 +12,9 @@ const LandingHome = () => {
       ></div>
       
       {/* Content positioned to be entirely visible above fold on mobile */}
-      <div className="absolute bottom-40 md:bottom-28 lg:bottom-32 left-0 right-0 p-8 md:p-12 lg:p-16">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="absolute bottom-40 md:bottom-28 lg:bottom-32 left-0 right-0 p-8 sm:p-15">
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-7xl text-center">
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-luscious-lime font-sora leading-tight mb-4 md:mb-6">
             Milimani Enterprises
@@ -23,6 +24,7 @@ const LandingHome = () => {
           <p className="text-lg md:text-xl lg:text-2xl font-medium text-whisper-white leading-relaxed">
             East Africa's Trusted Manufacturer & Supplier Of Baking Ingredients
           </p>
+          </div>
         </div>
       </div>
     </div>

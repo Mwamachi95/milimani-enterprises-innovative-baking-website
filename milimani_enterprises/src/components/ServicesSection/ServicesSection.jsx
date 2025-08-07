@@ -45,9 +45,11 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-dark-hunter-green px-8 md:px-12 lg:px-16">
-      {/* Header - Fixed at top */}
-      <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
+    <section className="bg-dark-hunter-green px-8 sm:px-15">
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          {/* Header - Fixed at top */}
+          <div className="pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-12">
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-wet-sand mb-4">
           OUR SERVICES
@@ -122,6 +124,8 @@ const ServicesSection = () => {
             </div>
           </div>
         ))}
+          </div>
+        </div>
       </div>
     </section>
   );

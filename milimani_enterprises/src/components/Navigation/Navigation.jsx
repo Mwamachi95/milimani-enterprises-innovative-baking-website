@@ -57,14 +57,14 @@ const Navigation = () => {
         if (mainIndex < mainText.length) {
           setTypewriterText(mainText.substring(0, mainIndex + 1));
           mainIndex++;
-          mainTimeout = setTimeout(typeOutMain, 80);
+          mainTimeout = setTimeout(typeOutMain, 50);
         } else {
           // Start typing sub text after main text is complete
           const typeOutSub = () => {
             if (subIndex < subText.length) {
               setTypewriterSubText(subText.substring(0, subIndex + 1));
               subIndex++;
-              subTimeout = setTimeout(typeOutSub, 80);
+              subTimeout = setTimeout(typeOutSub, 50);
             }
           };
           typeOutSub();
@@ -179,7 +179,7 @@ const Navigation = () => {
             <img 
               src={logoIcon} 
               alt="Milimani Enterprises Logo" 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain transition-all duration-300 group-hover:brightness-75 group-hover:hue-rotate-15"
             />
           </div>
           

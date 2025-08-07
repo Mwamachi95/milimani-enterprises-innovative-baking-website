@@ -1,14 +1,14 @@
 function AboutUsHero(){
     return(
         <>
-        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 pl-8 pr-8 pt-40 pb-40">
+        <div className="lg:pl-15 lg:pr-0 lg:pt-15 lg:pb-15 px-6 md:px-8 pt-32 pb-32 md:pt-40 md:pb-40">
 
-            <div className="sm:w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center overflow-hidden">
+            <div className="w-full flex items-center justify-between md:gap-5 xl:gap-40 xl:justify-center">
 
                 {/* Text Section */}
                 <div className="flex flex-col gap-4 items-start text-[#143e45]">
-                    <h1 className="text-6xl md:text-7xl font-extrabold tracking-wider max-w-160">Where We Bake Innovatively</h1>
-                    <p className="text-sm md:text1 max-w-155">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-wider leading-tight max-w-full md:max-w-160">Where We Bake Innovatively</h1>
+                    <p className="text-base md:text-lg leading-relaxed max-w-full md:max-w-155">Milimani Enterprises supplies quality baking ingredients and equipment across Rwanda. We blend innovation with a personal touch to help bakers succeed.</p>
                     {/* Learn more button */}
                     <button 
                         onClick={() => {

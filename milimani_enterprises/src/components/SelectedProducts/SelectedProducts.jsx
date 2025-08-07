@@ -44,9 +44,11 @@ const SelectedProducts = () => {
   ];
 
   return (
-    <section className="bg-whisper-white py-[106px] px-8 md:px-12 lg:px-16">
-      {/* Header Section */}
-      <div className="text-center">
+    <section className="bg-whisper-white py-[106px] px-8 sm:px-15">
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          {/* Header Section */}
+          <div className="text-center">
         {/* Subtitle */}
         <p className="text-sm md:text-base uppercase tracking-wider text-bokara-grey mb-4 font-bold">
           SELECTED PRODUCTS
@@ -105,6 +107,8 @@ const SelectedProducts = () => {
             </div>
           </div>
         ))}
+          </div>
+        </div>
       </div>
     </section>
   );

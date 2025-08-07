@@ -86,7 +86,7 @@ function Footer(){
                                     </div>
 
                                     {/* Pages */}
-                                    <div className="flex flex-col items-start gap-3">
+                                    <div className="hidden md:flex flex-col items-start gap-3">
                                         <p className="font-semibold text-xl">Pages</p>
                                         <li onClick={() => navigate("/")} className="list-none cursor-pointer group">
                                             <a className="text-sm relative">
