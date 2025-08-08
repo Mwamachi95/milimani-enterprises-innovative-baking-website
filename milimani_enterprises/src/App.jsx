@@ -1,19 +1,50 @@
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/home'
-import AboutUs from './pages/aboutUs'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { HelmetProvider } from 'react-helmet-async'
+import { BackToTop, PageTransition } from './components'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import PWAStatus from './components/PWAStatus/PWAStatus'
+import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/contactUs'
-function App() {
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/aboutUs" element={<AboutUs/>} />
-        <Route path="/contactUs" element={<ContactUs/>} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        } />
+        <Route path="/aboutUs" element={
+          <PageTransition>
+            <AboutUs />
+          </PageTransition>
+        } />
+        <Route path="/contactUs" element={
+          <PageTransition>
+            <ContactUs />
+          </PageTransition>
+        } />
       </Routes>
-    </BrowserRouter>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <PWAStatus />
+        <AnimatedRoutes />
+        <BackToTop />
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 
-export default App
+export default App;

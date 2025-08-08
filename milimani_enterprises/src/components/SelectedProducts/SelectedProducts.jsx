@@ -1,0 +1,118 @@
+import { useState, useEffect } from 'react';
+import { AnimatedSection, AnimatedGrid } from '../animations';
+import vanillaCreamCakeMix from '../../assets/images/home/hero/Vanilla_cream_cake_mix.jpg';
+import vanillaVelvet from '../../assets/images/home/hero/Vanilla_velvet.jpg';
+import vanillaPoundCake from '../../assets/images/home/hero/Vanilla_pound_cake_mix.jpg';
+import vanillaSpongeCakeMix from '../../assets/images/home/hero/Vanilla_Sponge_cake_mix.jpg';
+
+const SelectedProducts = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const rotatingTexts = ["Modern Tastes", "Fresh Mornings", "Storytelling Crumbs"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const products = [
+    {
+      id: 1,
+      name: "Vanilla Cream Cake Mix",
+      image: vanillaCreamCakeMix,
+      tag: "Premium",
+    },
+    {
+      id: 2,
+      name: "Vanilla Velvet",
+      image: vanillaVelvet,
+      tag: "Best Seller",
+    },
+    {
+      id: 3,
+      name: "Vanilla Pound Cake",
+      image: vanillaPoundCake,
+      tag: "New",
+    },
+    {
+      id: 4,
+      name: "Vanilla Sponge Cake Mix",
+      image: vanillaSpongeCakeMix,
+      tag: "Popular",
+    },
+  ];
+
+  return (
+    <section className="bg-whisper-white py-[106px] px-8 sm:px-15">
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          {/* Header Section */}
+          <AnimatedSection className="text-center" delay={0.3}>
+        {/* Subtitle */}
+        <p className="text-sm md:text-base uppercase tracking-wider text-bokara-grey mb-4 font-bold">
+          SELECTED PRODUCTS
+        </p>
+        
+        {/* Main Heading with Rotating Text */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-sora text-bokara-grey">
+            Innovative Baking For
+          </h2>
+          <div className="bg-dark-hunter-green text-white px-4 py-2 rounded-lg inline-block min-w-[200px] md:min-w-[240px]">
+            <span className="text-2xl md:text-4xl lg:text-5xl font-bold font-sora transition-all duration-500">
+              {rotatingTexts[currentTextIndex]}
+            </span>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Product Grid */}
+      <AnimatedGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16" staggerDelay={0.1}>
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col h-full"
+          >
+            {/* Product Image */}
+            <div className="aspect-[3/4] overflow-hidden relative z-20">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            
+            {/* Product Info Section with Sliding Background */}
+            <div className="relative flex-1">
+              {/* Sliding Background - only covers text area */}
+              <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
+              
+              {/* Product Info Content */}
+              <div className="relative z-20 p-6 flex flex-col justify-between h-full min-h-[120px]">
+                {/* Product Name */}
+                <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
+                  {product.name}
+                </h3>
+                
+                {/* Tag/Badge */}
+                <div className="flex justify-start">
+                  <span className="bg-whisper-white group-hover:bg-white text-bokara-grey px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500">
+                    {product.tag}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </AnimatedGrid>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SelectedProducts;
