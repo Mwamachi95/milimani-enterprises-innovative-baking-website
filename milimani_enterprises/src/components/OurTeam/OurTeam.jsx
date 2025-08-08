@@ -44,7 +44,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="md.jpg" alt="Managing director" className="w-full h-full object-cover object-[center_45%] xl:object-[center_45%]" loading="lazy" decoding="async" />
+                                    <img src="operations.jpg" alt="Managing director" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_65%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
@@ -64,7 +64,7 @@ function OurTeam (){
                             <div className="flex flex-col group cursor-pointer relative bg-white rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <div className="w-full h-80 xl:h-96 overflow-hidden relative z-20">
-                                    <img src="operations.jpg" alt="Head of operations" className="w-full h-full object-cover object-[center_65%] sm:object-[center_85%] xl:object-[center_65%]" loading="lazy" decoding="async" />
+                                    <img src="md.jpg" alt="Head of operations" className="w-full h-full object-cover object-[center_45%] xl:object-[center_45%]" loading="lazy" decoding="async" />
                                 </div>
                                 
                                 {/* Title Section with Sliding Background */}
