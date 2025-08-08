@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import { HelmetProvider } from 'react-helmet-async'
 import { BackToTop, PageTransition } from './components'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import PWAStatus from './components/PWAStatus/PWAStatus'
@@ -35,12 +36,14 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <PWAStatus />
-      <AnimatedRoutes />
-      <BackToTop />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <PWAStatus />
+        <AnimatedRoutes />
+        <BackToTop />
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 
