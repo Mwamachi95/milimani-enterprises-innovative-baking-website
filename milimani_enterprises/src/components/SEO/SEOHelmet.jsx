@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
 const SEOHelmet = ({
@@ -24,7 +23,7 @@ const SEOHelmet = ({
   const socialDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
 
   return (
-    <Helmet>
+    <>
       {/* Basic SEO Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -71,7 +70,7 @@ const SEOHelmet = ({
       <meta name="geo.placename" content="Kigali" />
       <meta name="geo.position" content="-1.9441;30.0619" />
       <meta name="ICBM" content="-1.9441, 30.0619" />
-    </Helmet>
+    </>
   );
 };
 
