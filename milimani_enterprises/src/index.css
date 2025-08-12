@@ -1,32 +1,30 @@
 @import "tailwindcss";
 
+@theme {
+  --color-luscious-lime: #7CBF00;
+  --color-bright-white: #F6F2F1;
+  --color-whisper-white: #EAE2D3;
+  --color-wet-sand: #AE8F60;
+  --color-bokara-grey: #2A2725;
+  --color-dark-hunter-green: #153033;
+  
+  --font-family-sora: Sora, sans-serif;
+}
+
 :root {
   font-family: "Sora", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth
-
 }
 
 body {
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
   margin: 0;
-  display: flex;
 }
 
-.heading1{
-  @apply text-6xl	font-bold
+.heading1 {
+  @apply text-6xl font-bold;
 }
 
-.heading2{
+.heading2 {
   @apply text-4xl font-bold;
 }
 
@@ -42,10 +40,41 @@ body {
   @apply text-lg font-semibold;
 }
 
-.test1 {
+.text1 {
   @apply text-base font-normal;
 }
 
 .text2 {
   @apply text-sm font-normal;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Mobile Menu Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.4s ease-out forwards;
 }
