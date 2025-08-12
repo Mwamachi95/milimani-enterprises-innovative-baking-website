@@ -29,7 +29,7 @@ const MessageFromOwner = () => {
             <AnimatedSection delay={0.6}>
               <div>
                 <h3 className="font-sora font-semibold text-lg md:text-base lg:text-lg xl:text-xl text-dark-hunter-green mb-2">
-                  Patricia Torotich
+                  Patricia Toroitich
                 </h3>
                 <p className="text-base md:text-sm lg:text-base xl:text-lg text-bokara-grey">
                   Founder & CEO
