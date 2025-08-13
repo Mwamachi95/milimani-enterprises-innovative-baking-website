@@ -1,9 +1,64 @@
 import { useState, useEffect } from 'react';
 import { AnimatedSection, AnimatedGrid } from '../animations';
+import { motion } from 'framer-motion';
 import vanillaCreamCakeMix from '../../assets/images/home/hero/Vanilla_cream_cake_mix.jpg';
 import vanillaVelvet from '../../assets/images/home/hero/Vanilla_velvet.jpg';
 import vanillaPoundCake from '../../assets/images/home/hero/Vanilla_pound_cake_mix.jpg';
 import vanillaSpongeCakeMix from '../../assets/images/home/hero/Vanilla_Sponge_cake_mix.jpg';
+
+// Skeleton component for loading state
+const ProductCardSkeleton = () => (
+  <div className="bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full">
+    <div className="aspect-[3/4] bg-gray-200 animate-pulse"></div>
+    <div className="p-6 flex flex-col justify-between h-full min-h-[120px]">
+      <div className="h-5 bg-gray-200 rounded animate-pulse mb-4"></div>
+      <div className="h-6 bg-gray-200 rounded animate-pulse w-16"></div>
+    </div>
+  </div>
+);
+
+// Lazy-loaded product card component
+const LazyProductCard = ({ product }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "100px" }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col h-full"
+  >
+    {/* Product Image */}
+    <div className="aspect-[3/4] overflow-hidden relative z-20">
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    
+    {/* Product Info Section with Sliding Background */}
+    <div className="relative flex-1">
+      {/* Sliding Background - only covers text area */}
+      <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
+      
+      {/* Product Info Content */}
+      <div className="relative z-20 p-6 flex flex-col justify-between h-full min-h-[120px]">
+        {/* Product Name */}
+        <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
+          {product.name}
+        </h3>
+        
+        {/* Tag/Badge */}
+        <div className="flex justify-start">
+          <span className="bg-whisper-white group-hover:bg-white text-bokara-grey px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500">
+            {product.tag}
+          </span>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const SelectedProducts = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -15,7 +70,7 @@ const SelectedProducts = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [rotatingTexts.length]);
 
   const products = [
     {
@@ -71,42 +126,10 @@ const SelectedProducts = () => {
       {/* Product Grid */}
       <AnimatedGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16" staggerDelay={0.1}>
         {products.map((product) => (
-          <div
+          <LazyProductCard
             key={product.id}
-            className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:cursor-pointer flex flex-col h-full"
-          >
-            {/* Product Image */}
-            <div className="aspect-[3/4] overflow-hidden relative z-20">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            
-            {/* Product Info Section with Sliding Background */}
-            <div className="relative flex-1">
-              {/* Sliding Background - only covers text area */}
-              <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
-              
-              {/* Product Info Content */}
-              <div className="relative z-20 p-6 flex flex-col justify-between h-full min-h-[120px]">
-                {/* Product Name */}
-                <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
-                  {product.name}
-                </h3>
-                
-                {/* Tag/Badge */}
-                <div className="flex justify-start">
-                  <span className="bg-whisper-white group-hover:bg-white text-bokara-grey px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500">
-                    {product.tag}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+            product={product}
+          />
         ))}
       </AnimatedGrid>
         </div>
