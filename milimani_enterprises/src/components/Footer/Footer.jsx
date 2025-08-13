@@ -22,10 +22,10 @@ function Footer(){
                             <div className="lg:w-full flex flex-col lg:flex-row gap-10 justify-between">
                                 {/* Logo */}
                                 <div className="flex flex-row gap-3 items-center justify-start sm:justify-center">
-                                    <img className="w-30 sm:w-43" src="logo.svg" alt="logo" loading="lazy" decoding="async" />
-                                    <div className="">
-                                        <h1 className="font-bold text-4xl sm:text-5xl text-left">Milimani<br/>Enterprises</h1>
-                                        <p className="font-regular text-lg text-white text-left">Innovative Baking</p>    
+                                    <img className="w-20 sm:w-30 md:w-43" src="logo.svg" alt="logo" loading="lazy" decoding="async" />
+                                    <div className="flex-shrink min-w-0">
+                                        <h1 className="font-bold text-2xl sm:text-4xl md:text-5xl text-left leading-tight">Milimani<br/>Enterprises</h1>
+                                        <p className="font-regular text-sm sm:text-lg text-white text-left">Innovative Baking</p>    
                                     </div>
                                 </div>
                                 
