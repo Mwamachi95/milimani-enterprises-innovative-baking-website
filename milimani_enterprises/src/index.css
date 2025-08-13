@@ -18,6 +18,11 @@
 body {
   font-family: 'Sora', system-ui, -apple-system, sans-serif;
   margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .heading1 {

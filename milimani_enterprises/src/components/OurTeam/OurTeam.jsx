@@ -56,7 +56,7 @@ const LazyTeamCard = ({ imageSrc, imageAlt, name, role, objectPosition, isVisibl
 function OurTeam (){
     return (
         <>
-            <div className="min-w-50 w-full sm:w-screen p-8 sm:p-15 flex flex-col gap-20 overflow-x-auto">
+            <div className="w-full p-8 sm:p-15 flex flex-col gap-20">
                 {/* Title */}
                 <AnimatedSection variants={fadeInUp} className="flex flex-col gap-4 sm:items-center">
                     <h1 className="text-4xl font-semibold text-black sm:text-center text-left">We are the people who make up</h1>

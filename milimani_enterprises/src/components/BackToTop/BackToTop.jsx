@@ -56,7 +56,7 @@ const BackToTop = () => {
     <button
       onClick={scrollToTop}
       onKeyDown={handleKeyDown}
-      className={`fixed bottom-24 right-10 md:bottom-28 md:right-12 z-40 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-luscious-lime hover:bg-wet-sand text-white rounded-2xl shadow-lg transition-all duration-300 flex items-center justify-center group hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-luscious-lime focus:ring-opacity-50 active:scale-95 ${
+      className={`fixed bottom-24 right-4 sm:right-6 md:bottom-28 md:right-8 lg:right-10 z-40 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-luscious-lime hover:bg-wet-sand text-white rounded-2xl shadow-lg transition-all duration-300 flex items-center justify-center group hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-luscious-lime focus:ring-opacity-50 active:scale-95 ${
         isScrolling ? 'opacity-70' : 'opacity-100'
       } animate-fadeIn`}
       aria-label="Back to top"

@@ -344,7 +344,7 @@ const Navigation = () => {
               }
               closeMobileMenu();
             }}
-            className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 border-b border-white border-opacity-20 -ml-8 pl-8"
+            className="block text-2xl font-semibold text-white py-6 transition-all duration-200 border-b border-white border-opacity-20"
           >
             Company
           </Link>
@@ -358,7 +358,7 @@ const Navigation = () => {
               }
               closeMobileMenu();
             }}
-            className="w-screen text-2xl font-semibold text-white py-6 transition-all duration-200 -ml-8 pl-8"
+            className="block text-2xl font-semibold text-white py-6 transition-all duration-200"
           >
             Let's Talk
           </Link>
