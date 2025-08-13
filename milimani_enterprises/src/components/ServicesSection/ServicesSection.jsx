@@ -42,15 +42,15 @@ const ServicesSection = () => {
 
 
   const handleMouseEnter = (serviceId) => {
-    // Only use hover effect on desktop screens (1024px+) and only if not touch device
-    if (isDesktop && !('ontouchstart' in window)) {
+    // Only use hover effect on desktop screens (1024px+) and only if primary input is not touch
+    if (isDesktop && window.matchMedia('(hover: hover)').matches) {
       setActiveAccordion(serviceId);
     }
   };
 
   const handleMouseLeave = () => {
-    // Only use hover effect on desktop screens (1024px+) and only if not touch device
-    if (isDesktop && !('ontouchstart' in window)) {
+    // Only use hover effect on desktop screens (1024px+) and only if primary input is not touch
+    if (isDesktop && window.matchMedia('(hover: hover)').matches) {
       setActiveAccordion(null);
     }
   };
@@ -62,7 +62,7 @@ const ServicesSection = () => {
     
     // On touch devices or non-desktop, always use click to toggle
     // On desktop non-touch devices, click should also work as fallback
-    if (!isDesktop || ('ontouchstart' in window)) {
+    if (!isDesktop || !window.matchMedia('(hover: hover)').matches) {
       setActiveAccordion(activeAccordion === serviceId ? null : serviceId);
     } else {
       // Even on desktop, allow click toggle as fallback
