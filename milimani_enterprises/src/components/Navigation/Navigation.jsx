@@ -335,6 +335,20 @@ const Navigation = () => {
       >
         <div className="flex flex-col justify-start h-full pt-8 px-8">
           
+          {/* Home Link Mobile */}
+          <Link 
+            to="/"
+            onClick={(event) => {
+              if (!handleSamePageNavigation('/', event)) {
+                window.scrollTo(0, 0);
+              }
+              closeMobileMenu();
+            }}
+            className="block text-2xl font-semibold text-white py-6 transition-all duration-200 border-b border-white border-opacity-20"
+          >
+            Home
+          </Link>
+
           {/* Company Link Mobile */}
           <Link 
             to="/aboutUs"
