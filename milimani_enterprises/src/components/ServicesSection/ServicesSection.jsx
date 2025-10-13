@@ -21,22 +21,17 @@ const ServicesSection = () => {
     {
       id: 1,
       title: "MANUFACTURING & SUPPLY OF BAKING INGREDIENTS",
-      content: "We specialize in the production and distribution of premium baking ingredients sourced from the finest suppliers across East Africa. Our state-of-the-art facilities ensure consistent quality and freshness in every product we deliver. From vanilla extracts to specialty cake mixes, we provide the essential components that make exceptional baking possible."
+      content: "We specialize in the production and distribution of premium baking ingredients sourced from the finest suppliers across East Africa. Our state-of-the-art facilities ensure consistent quality and freshness in every product we deliver. From specialty cake mixes to other ingredients, we provide the essential components that make exceptional baking possible."
     },
     {
       id: 2,
-      title: "BAKING EQUIPMENT SUPPLY",
-      content: "Our comprehensive equipment solutions cover everything from industrial mixers to precision measuring tools. We partner with leading manufacturers to bring you reliable, high-performance baking equipment that meets the demands of modern commercial bakeries. Professional installation, training, and ongoing support ensure your operations run smoothly."
+      title: "COLLABORATIVE SUPPORT & LONG-TERM PARTNERSHIPS",
+      content: "We believe in building lasting relationships with our clients through dedicated support and collaborative problem-solving. Our experienced team works closely with bakers to understand their unique challenges and develop customized solutions that drive growth and operational excellence."
     },
     {
       id: 3,
-      title: "COLLABORATIVE SUPPORT & LONG-TERM PARTNERSHIPS",
-      content: "We believe in building lasting relationships with our clients through dedicated support and collaborative problem-solving. Our experienced team works closely with bakeries to understand their unique challenges and develop customized solutions that drive growth and operational excellence."
-    },
-    {
-      id: 4,
       title: "INNOVATIVE & CUSTOMER-FOCUSED SOLUTIONS",
-      content: "Innovation drives everything we do, from developing new ingredient formulations to implementing cutting-edge supply chain technologies. We continuously invest in research and development to bring you the latest advancements in baking science, ensuring your products stay ahead of market trends and customer expectations."
+      content: "Innovation drives everything we do, from developing new ingredient formulations to enhancing our production processes. We continuously invest in research and development to bring you the latest advancements in baking science, ensuring your products stay ahead of market trends and customer expectations."
     }
   ];
 
