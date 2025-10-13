@@ -43,11 +43,18 @@ const LazyProductCard = ({ product }) => (
       <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
       
       {/* Product Info Content */}
-      <div className="relative z-20 p-6 flex flex-col justify-center h-full min-h-[120px]">
+      <div className="relative z-20 p-6 flex flex-col justify-end h-full min-h-[120px]">
         {/* Product Name */}
-        <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500">
+        <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-2">
           {product.name}
         </h3>
+
+        {/* Tag/Badge */}
+        <div className="flex justify-start">
+          <span className="bg-whisper-white group-hover:bg-white text-bokara-grey px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500">
+            {product.tag}
+          </span>
+        </div>
       </div>
     </div>
   </motion.div>
@@ -70,21 +77,25 @@ const SelectedProducts = () => {
       id: 1,
       name: "Vanilla Pound Cake Mix",
       image: vanillaPoundCakeMix,
+      tag: "cake mix",
     },
     {
       id: 2,
       name: "Red Velvet Cake Mix",
       image: redVelvetCakeMix,
+      tag: "cake mix",
     },
     {
       id: 3,
       name: "Pastry Margarine",
       image: pastryMargarine,
+      tag: "pastry mix",
     },
     {
       id: 4,
       name: "Whipping Cream Powder",
       image: whippingCreamPowder,
+      tag: "cream mix",
     },
   ];
 
