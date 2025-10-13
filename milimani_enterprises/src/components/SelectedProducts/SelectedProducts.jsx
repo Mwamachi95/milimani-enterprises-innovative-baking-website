@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatedSection, AnimatedGrid } from '../animations';
 import { motion } from 'framer-motion';
-import vanillaPoundCakeMix from '../../assets/images/home/hero/vanilla_pound_cake_mix.jpg';
+import vanillaPoundCakeMix from '../../assets/images/home/hero/Vanilla_pound_cake_mix.jpg';
 import redVelvetCakeMix from '../../assets/images/home/hero/red_velvet_cake_mix.jpg';
 import pastryMargarine from '../../assets/images/home/hero/pastry_margarine.jpg';
 import whippingCreamPowder from '../../assets/images/home/hero/whipping_cream_powder.jpg';
