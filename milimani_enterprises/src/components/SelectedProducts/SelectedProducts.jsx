@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { AnimatedSection, AnimatedGrid } from '../animations';
 import { motion } from 'framer-motion';
-import vanillaCreamCakeMix from '../../assets/images/home/hero/Vanilla_cream_cake_mix.jpg';
-import vanillaVelvet from '../../assets/images/home/hero/Vanilla_velvet.jpg';
-import vanillaPoundCake from '../../assets/images/home/hero/Vanilla_pound_cake_mix.jpg';
-import vanillaSpongeCakeMix from '../../assets/images/home/hero/Vanilla_Sponge_cake_mix.jpg';
+import vanillaPoundCakeMix from '../../assets/images/home/hero/vanilla_pound_cake_mix.jpg';
+import redVelvetCakeMix from '../../assets/images/home/hero/red_velvet_cake_mix.jpg';
+import pastryMargarine from '../../assets/images/home/hero/pastry_margarine.jpg';
+import whippingCreamPowder from '../../assets/images/home/hero/whipping_cream_powder.jpg';
 
 // Skeleton component for loading state
 const ProductCardSkeleton = () => (
@@ -43,18 +43,11 @@ const LazyProductCard = ({ product }) => (
       <div className="absolute inset-0 bg-bokara-grey transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10"></div>
       
       {/* Product Info Content */}
-      <div className="relative z-20 p-6 flex flex-col justify-between h-full min-h-[120px]">
+      <div className="relative z-20 p-6 flex flex-col justify-center h-full min-h-[120px]">
         {/* Product Name */}
-        <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500 mb-4">
+        <h3 className="font-sora font-semibold text-bokara-grey group-hover:text-white transition-colors duration-500">
           {product.name}
         </h3>
-        
-        {/* Tag/Badge */}
-        <div className="flex justify-start">
-          <span className="bg-whisper-white group-hover:bg-white text-bokara-grey px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500">
-            {product.tag}
-          </span>
-        </div>
       </div>
     </div>
   </motion.div>
@@ -75,27 +68,23 @@ const SelectedProducts = () => {
   const products = [
     {
       id: 1,
-      name: "Vanilla Cream Cake Mix",
-      image: vanillaCreamCakeMix,
-      tag: "Premium",
+      name: "Vanilla Pound Cake Mix",
+      image: vanillaPoundCakeMix,
     },
     {
       id: 2,
-      name: "Vanilla Velvet",
-      image: vanillaVelvet,
-      tag: "Best Seller",
+      name: "Red Velvet Cake Mix",
+      image: redVelvetCakeMix,
     },
     {
       id: 3,
-      name: "Vanilla Pound Cake",
-      image: vanillaPoundCake,
-      tag: "New",
+      name: "Pastry Margarine",
+      image: pastryMargarine,
     },
     {
       id: 4,
-      name: "Vanilla Sponge Cake Mix",
-      image: vanillaSpongeCakeMix,
-      tag: "Popular",
+      name: "Whipping Cream Powder",
+      image: whippingCreamPowder,
     },
   ];
 
